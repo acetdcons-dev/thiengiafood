@@ -1,4 +1,4 @@
-/* Kim Long Tiệc — script.js */
+/* Thiên Gia Food — script.js */
 
 document.addEventListener('DOMContentLoaded', () => {
 
@@ -145,7 +145,7 @@ document.addEventListener('DOMContentLoaded', () => {
       showToast('Số điện thoại chưa hợp lệ, vui lòng kiểm tra lại.');
       return;
     }
-    showToast(`Cảm ơn ${name}! Kim Long Tiệc sẽ gọi lại trong 5 phút.`);
+    showToast(`Cảm ơn ${name}! Thiên Gia Food sẽ gọi lại trong 5 phút.`);
     bookingForm.reset();
   });
 
