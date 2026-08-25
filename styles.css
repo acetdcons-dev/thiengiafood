@@ -395,6 +395,24 @@ h1, h2, h3, h4 { font-family: var(--font-display); font-weight: 700; color: var(
   .invite-teaser__cards { margin: 30px auto 0; }
 }
 
+/* ===== GHÉP ẢNH CƯỚI AI TEASER ===== */
+.wai-teaser { padding: 70px 0; background: var(--cream-100); position: relative; overflow: hidden; }
+.wai-teaser__inner { display: grid; grid-template-columns: 0.8fr 1.2fr; gap: 50px; align-items: center; }
+.wai-teaser__text p { color: var(--ink-700); margin: 16px 0 26px; max-width: 480px; }
+.wai-teaser__visual { position: relative; height: 220px; }
+.wai-teaser__frame {
+  position: absolute; width: 150px; height: 200px; border-radius: 14px;
+  box-shadow: var(--shadow-card); border: 2px solid var(--gold-500);
+}
+.wai-teaser__frame--1 { background: linear-gradient(160deg, var(--maroon-700), var(--maroon-950)); left: 10%; top: 6px; transform: rotate(-7deg); z-index: 1; }
+.wai-teaser__frame--2 { background: linear-gradient(160deg, var(--cream-100), var(--cream-200)); left: 34%; top: 0; transform: rotate(6deg); z-index: 2; }
+.wai-teaser__spark { position: absolute; top: -6px; right: 18%; font-size: 2rem; z-index: 3; filter: drop-shadow(0 4px 8px rgba(0,0,0,0.15)); }
+@media (max-width: 1024px) {
+  .wai-teaser__inner { grid-template-columns: 1fr; text-align: center; }
+  .wai-teaser__text p { margin-left: auto; margin-right: auto; }
+  .wai-teaser__visual { margin: 0 auto 20px; }
+}
+
 /* ===== GALLERY ===== */
 .gallery { padding: 90px 0; background: var(--cream-200); }
 .gallery__grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 18px; }
