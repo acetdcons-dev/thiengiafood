@@ -1,0 +1,70 @@
+/* ===================================================================
+   GHÉP ẢNH CƯỚI BẰNG AI — wedding-ai.css
+   =================================================================== */
+
+.wai-main { padding: 60px 0 90px; min-height: 100vh; background: var(--cream-100); }
+
+.wai-section-title { font-family: var(--font-display); font-size: 1.25rem; font-weight: 800; color: var(--maroon-900); margin-bottom: 6px; }
+.wai-section-sub { color: var(--ink-700); font-size: 0.88rem; margin-bottom: 24px; }
+
+/* ===== THƯ VIỆN PHONG CÁCH ===== */
+.wai-styles { margin-bottom: 60px; }
+.wai-style-grid { display: grid; grid-template-columns: repeat(6, 1fr); gap: 16px; }
+.wai-style-card {
+  border-radius: var(--radius-md);
+  padding: 26px 14px;
+  text-align: center;
+  color: var(--cream-100);
+  display: flex; flex-direction: column; align-items: center; gap: 10px;
+  box-shadow: var(--shadow-soft);
+  transition: transform 0.25s ease, box-shadow 0.25s ease;
+}
+.wai-style-card:hover { transform: translateY(-5px); box-shadow: var(--shadow-card); }
+.wai-style-card__icon { font-size: 1.7rem; }
+.wai-style-card__name { font-family: var(--font-display); font-size: 0.88rem; font-weight: 700; line-height: 1.3; min-height: 2.4em; }
+.wai-style-card .btn { width: 100%; background: rgba(255,255,255,0.12); border-color: rgba(255,255,255,0.4); color: var(--cream-100); }
+.wai-style-card .btn:hover { background: rgba(255,255,255,0.24); }
+
+/* ===== KHU VỰC TẠO ẢNH ===== */
+.wai-generator__inner {
+  display: grid; grid-template-columns: 1fr 1fr; gap: 48px; align-items: start;
+  background: var(--white); border-radius: var(--radius-lg); padding: 36px; box-shadow: var(--shadow-soft);
+}
+.wai-upload-row { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; margin-bottom: 12px; }
+.wai-upload-box { display: flex; flex-direction: column; align-items: center; gap: 10px; }
+.wai-upload-preview {
+  width: 100%; aspect-ratio: 1 / 1; border-radius: var(--radius-md);
+  background: var(--cream-200) center/cover no-repeat;
+  border: 2px dashed rgba(168,31,38,0.28);
+}
+.wai-upload-preview.has-photo { border-style: solid; border-color: var(--gold-500); }
+.wai-hint { font-size: 0.78rem; color: var(--ink-700); margin-bottom: 18px; }
+.wai-status { font-size: 0.85rem; color: var(--maroon-700); margin-top: 14px; min-height: 1.2em; }
+
+.wai-result-frame {
+  width: 100%; aspect-ratio: 3 / 4;
+  border-radius: var(--radius-lg);
+  background: linear-gradient(160deg, var(--cream-200), var(--cream-100));
+  border: 2px dashed rgba(168,31,38,0.2);
+  display: flex; align-items: center; justify-content: center;
+  overflow: hidden;
+  margin-bottom: 18px;
+}
+.wai-result-placeholder { text-align: center; color: var(--ink-700); padding: 0 20px; }
+.wai-result-placeholder span { font-size: 2.4rem; display: block; margin-bottom: 10px; }
+.wai-result-placeholder p { font-size: 0.85rem; max-width: 220px; margin: 0 auto; }
+#resultImage { width: 100%; height: 100%; object-fit: cover; display: block; }
+.wai-result-actions { display: flex; gap: 12px; }
+.wai-result-actions .btn { flex: 1; }
+
+.wai-cta-footer { text-align: center; margin-top: 60px; }
+.wai-cta-footer p { color: var(--ink-700); margin-bottom: 16px; }
+
+@media (max-width: 1024px) {
+  .wai-generator__inner { grid-template-columns: 1fr; }
+  .wai-style-grid { grid-template-columns: repeat(3, 1fr); }
+}
+@media (max-width: 640px) {
+  .wai-style-grid { grid-template-columns: repeat(2, 1fr); }
+  .wai-generator__inner { padding: 24px; }
+}

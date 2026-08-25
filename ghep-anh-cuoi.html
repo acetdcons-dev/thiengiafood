@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Ghép Ảnh Cưới Bằng AI Miễn Phí — Thiên Gia Food</title>
+<meta name="description" content="Tải ảnh cô dâu, chú rể lên, chọn phong cách hoặc mô tả ý tưởng riêng — AI sẽ thiết kế ra một bức ảnh cưới nghệ thuật cho bạn, miễn phí.">
+<link rel="icon" href="data:,">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@500;600;700;800;900&family=Be+Vietnam+Pro:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="styles.css">
+<link rel="stylesheet" href="invite.css">
+<link rel="stylesheet" href="wedding-ai.css">
+</head>
+<body>
+
+<header class="header is-scrolled invite-header">
+  <div class="container header__inner">
+    <a href="index.html" class="logo">
+      <span class="logo__mark" aria-hidden="true">
+        <svg viewBox="0 0 100 100" fill="currentColor">
+          <circle cx="32" cy="40" r="15"/>
+          <circle cx="50" cy="26" r="19"/>
+          <circle cx="68" cy="40" r="15"/>
+          <rect x="27" y="44" width="46" height="18" rx="9"/>
+          <rect x="25" y="60" width="50" height="17" rx="5"/>
+          <rect x="19" y="81" width="62" height="6" rx="3"/>
+        </svg>
+      </span>
+      <span class="logo__text">Thiên Gia <em>Food</em></span>
+    </a>
+    <a href="index.html" class="btn btn--ghost btn--sm">← Về Trang Chủ</a>
+  </div>
+</header>
+
+<main class="wai-main">
+  <div class="container">
+
+    <div class="invite-intro">
+      <span class="section-label section-label--center">Miễn Phí — Thử Ngay</span>
+      <h1 class="section-title section-title--center">Ghép Ảnh Cưới Bằng AI</h1>
+      <p class="section-subtitle">Tải ảnh cô dâu, chú rể lên, chọn phong cách hoặc tự mô tả ý tưởng — AI sẽ thiết kế ra một bức ảnh cưới nghệ thuật cho bạn.</p>
+    </div>
+
+    <!-- ===== THƯ VIỆN PHONG CÁCH ===== -->
+    <section class="wai-styles">
+      <h2 class="wai-section-title">Thư Viện Phong Cách</h2>
+      <p class="wai-section-sub">Bấm chọn 1 phong cách để điền nhanh ý tưởng, hoặc tự mô tả riêng ở khung bên dưới.</p>
+      <div class="wai-style-grid" id="styleGrid"></div>
+    </section>
+
+    <!-- ===== KHU VỰC TẠO ẢNH ===== -->
+    <section class="wai-generator">
+      <div class="wai-generator__inner">
+        <div class="wai-upload-col">
+          <h2 class="wai-section-title">Tải Ảnh Lên</h2>
+          <div class="wai-upload-row">
+            <div class="wai-upload-box">
+              <div class="wai-upload-preview" id="groomPreview" aria-hidden="true"></div>
+              <label for="groomInput" class="btn btn--outline btn--sm">Chọn Ảnh Chú Rể</label>
+              <input type="file" id="groomInput" accept="image/*" hidden>
+            </div>
+            <div class="wai-upload-box">
+              <div class="wai-upload-preview" id="bridePreview" aria-hidden="true"></div>
+              <label for="brideInput" class="btn btn--outline btn--sm">Chọn Ảnh Cô Dâu</label>
+              <input type="file" id="brideInput" accept="image/*" hidden>
+            </div>
+          </div>
+          <p class="wai-hint">Nên dùng ảnh rõ mặt, nhìn thẳng, không đeo khẩu trang/kính râm để AI ghép đẹp và chuẩn nhất.</p>
+
+          <div class="form-group">
+            <label>Ý tưởng của bạn</label>
+            <textarea id="waiPrompt" rows="3" placeholder="VD: phong cách cổ điển sang trọng, background phòng tiệc ánh đèn vàng ấm..."></textarea>
+          </div>
+          <div class="form-group">
+            <label>Số điện thoại / Zalo (để nhận lượt tạo miễn phí)</label>
+            <input type="tel" id="waiPhone" placeholder="09xx xxx xxx">
+          </div>
+          <button type="button" class="btn btn--primary btn--lg" id="btnGenerateWedding">✨ Tạo Ảnh Cưới AI</button>
+          <p class="wai-status" id="waiStatus"></p>
+        </div>
+
+        <div class="wai-result-col">
+          <h2 class="wai-section-title">Kết Quả</h2>
+          <div class="wai-result-frame" id="resultFrame">
+            <div class="wai-result-placeholder" id="resultPlaceholder">
+              <span aria-hidden="true">💍</span>
+              <p>Ảnh cưới AI của bạn sẽ hiện ở đây</p>
+            </div>
+            <img id="resultImage" alt="Ảnh cưới do AI tạo" hidden>
+          </div>
+          <div class="wai-result-actions" id="resultActions" hidden>
+            <button type="button" class="btn btn--outline" id="btnDownloadWedding">⬇ Tải Ảnh Về</button>
+            <button type="button" class="btn btn--primary" id="btnRegenerateWedding">🔁 Tạo Lại</button>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <div class="wai-cta-footer">
+      <p>Thích ảnh cưới AI này? Đặt tiệc cưới trọn gói cùng Thiên Gia Food để có một ngày trọng đại hoàn hảo.</p>
+      <a href="index.html#dat-tiec" class="btn btn--outline">Đặt Tiệc Ngay</a>
+    </div>
+
+  </div>
+</main>
+
+<div class="toast" id="toast"></div>
+
+<script src="wedding-ai.js"></script>
+</body>
+</html>
