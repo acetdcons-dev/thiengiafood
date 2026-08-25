@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Tạo Thiệp Mời Online Miễn Phí — Thiên Gia Food</title>
+<meta name="description" content="Tạo thiệp mời online miễn phí cho đám cưới, ăn hỏi, thôi nôi, sinh nhật, tân gia, khai trương. Thiết kế đẹp, có ngay link chia sẻ qua Zalo, Messenger.">
+<link rel="icon" href="data:,">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@500;600;700;800;900&family=Be+Vietnam+Pro:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="styles.css">
+<link rel="stylesheet" href="invite.css">
+</head>
+<body>
+
+<header class="header is-scrolled invite-header">
+  <div class="container header__inner">
+    <a href="index.html" class="logo">
+      <span class="logo__mark" aria-hidden="true">
+        <svg viewBox="0 0 100 100" fill="currentColor">
+          <circle cx="32" cy="40" r="15"/>
+          <circle cx="50" cy="26" r="19"/>
+          <circle cx="68" cy="40" r="15"/>
+          <rect x="27" y="44" width="46" height="18" rx="9"/>
+          <rect x="25" y="60" width="50" height="17" rx="5"/>
+          <rect x="19" y="81" width="62" height="6" rx="3"/>
+        </svg>
+      </span>
+      <span class="logo__text">Thiên Gia <em>Food</em></span>
+    </a>
+    <a href="index.html" class="btn btn--ghost btn--sm">← Về Trang Chủ</a>
+  </div>
+</header>
+
+<main class="invite-main">
+  <div class="container">
+
+    <!-- ===== CHẾ ĐỘ TẠO THIỆP ===== -->
+    <section id="createMode">
+      <div class="invite-intro">
+        <span class="section-label section-label--center">Miễn Phí — Không Cần Đăng Ký</span>
+        <h1 class="section-title section-title--center">Tạo Thiệp Mời Online</h1>
+        <p class="section-subtitle">Chọn loại thiệp, điền thông tin, nhận ngay link thiệp đẹp để gửi Zalo, Messenger cho khách mời — hoặc tải ảnh về máy.</p>
+      </div>
+
+      <div class="invite-layout">
+        <form class="invite-form" id="inviteForm">
+          <div class="form-group">
+            <label>Loại thiệp</label>
+            <div class="invite-type-grid" id="typeGrid"></div>
+          </div>
+
+          <div class="form-group">
+            <label>Ảnh cá nhân (tuỳ chọn)</label>
+            <div class="invite-photo-upload">
+              <div class="invite-photo-preview" id="photoPreview" aria-hidden="true"></div>
+              <div class="invite-photo-actions">
+                <label for="photoInput" class="btn btn--outline btn--sm">Chọn Ảnh</label>
+                <input type="file" id="photoInput" accept="image/*" hidden>
+                <button type="button" class="btn btn--ghost-red btn--sm" id="btnRemovePhoto" hidden>Xoá Ảnh</button>
+              </div>
+            </div>
+          </div>
+
+          <div class="form-row" id="nameRow">
+            <div class="form-group">
+              <label id="name1Label">Tên chú rể</label>
+              <input type="text" id="name1" placeholder="Văn A">
+            </div>
+            <div class="form-group" id="name2Group">
+              <label>Tên cô dâu</label>
+              <input type="text" id="name2" placeholder="Thị B">
+            </div>
+          </div>
+
+          <div class="form-row">
+            <div class="form-group">
+              <label>Ngày tổ chức</label>
+              <input type="date" id="eventDate">
+            </div>
+            <div class="form-group">
+              <label>Giờ</label>
+              <input type="time" id="eventTime" value="18:00">
+            </div>
+          </div>
+
+          <div class="form-group">
+            <label>Địa điểm</label>
+            <input type="text" id="venue" placeholder="VD: Nhà hàng ABC / Tư gia">
+          </div>
+          <div class="form-group">
+            <label>Địa chỉ chi tiết (tuỳ chọn)</label>
+            <input type="text" id="address" placeholder="123 Nguyễn Văn Linh, Quận 7, TP.HCM">
+          </div>
+          <div class="form-group">
+            <label>Lời mời (tuỳ chọn — để trống dùng mẫu có sẵn)</label>
+            <textarea id="message" rows="2"></textarea>
+          </div>
+          <div class="form-group">
+            <label>Người mời (tuỳ chọn)</label>
+            <input type="text" id="hostName" placeholder="VD: Gia đình hai họ">
+          </div>
+
+          <div class="invite-actions">
+            <button type="button" class="btn btn--outline" id="btnDownload">⬇ Tải Ảnh Thiệp</button>
+            <button type="button" class="btn btn--primary" id="btnShare">🔗 Tạo Link Chia Sẻ</button>
+          </div>
+          <div class="invite-share-result" id="shareResult" hidden>
+            <input type="text" id="shareLink" readonly>
+            <button type="button" class="btn btn--primary" id="btnCopy">Sao Chép</button>
+          </div>
+
+          <div class="invite-ai-box">
+            <div class="invite-ai-box__head">
+              <span class="invite-ai-box__badge">✨ AI</span>
+              <h3>Tự Thiết Kế Nền Thiệp Theo Ý Bạn</h3>
+            </div>
+            <p class="invite-ai-box__desc">Mô tả phong cách bạn muốn (màu sắc, hoa văn, chủ đề...), AI sẽ vẽ riêng một nền thiệp theo đúng ý tưởng đó.</p>
+            <div class="form-group">
+              <label>Mô tả ý tưởng của bạn</label>
+              <textarea id="aiPrompt" rows="2" placeholder="VD: tông hồng pastel, hoa hồng và lá bạc hà, phong cách vintage nhẹ nhàng"></textarea>
+            </div>
+            <div class="form-group">
+              <label>Số điện thoại / Zalo (để nhận lượt tạo miễn phí)</label>
+              <input type="tel" id="aiPhone" placeholder="09xx xxx xxx">
+            </div>
+            <button type="button" class="btn btn--primary" id="btnGenerateAI">🎨 Tạo Nền AI</button>
+            <button type="button" class="btn btn--outline" id="btnResetAI" hidden>↺ Dùng Lại Mẫu Gốc</button>
+            <p class="invite-ai-box__status" id="aiStatus"></p>
+          </div>
+        </form>
+
+        <div class="invite-preview-wrap">
+          <div class="invite-card" id="inviteCard" data-theme="ruby"></div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ===== CHẾ ĐỘ XEM THIỆP (qua link chia sẻ) ===== -->
+    <section id="viewMode" hidden>
+      <div class="invite-view-card-wrap">
+        <div class="invite-card invite-card--large" id="viewCard"></div>
+      </div>
+      <div class="invite-view-cta">
+        <p>Thiệp mời này được tạo miễn phí bởi <strong>Thiên Gia Food</strong> — dịch vụ đặt tiệc tại nhà trọn gói TP.HCM &amp; các tỉnh lân cận.</p>
+        <a href="thiep-moi.html" class="btn btn--outline">Tạo Thiệp Của Riêng Bạn</a>
+        <a href="index.html#dat-tiec" class="btn btn--primary">Đặt Tiệc Ngay</a>
+      </div>
+    </section>
+
+  </div>
+</main>
+
+<canvas id="renderCanvas" width="1000" height="1400" style="display:none;"></canvas>
+
+<div class="toast" id="toast"></div>
+
+<script src="invite.js"></script>
+</body>
+</html>
