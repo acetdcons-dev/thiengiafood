@@ -21,6 +21,19 @@ document.addEventListener('DOMContentLoaded', () => {
   burger.addEventListener('click', () => nav.classList.toggle('is-open'));
   nav.querySelectorAll('a').forEach(a => a.addEventListener('click', () => nav.classList.remove('is-open')));
 
+  /* ===== NAV DROPDOWN (Tiện Ích) ===== */
+  const navDropdown = document.getElementById('navDropdown');
+  const navDropdownToggle = document.getElementById('navDropdownToggle');
+  if (navDropdown && navDropdownToggle) {
+    navDropdownToggle.addEventListener('click', (e) => {
+      e.stopPropagation();
+      navDropdown.classList.toggle('is-open');
+    });
+    document.addEventListener('click', (e) => {
+      if (!navDropdown.contains(e.target)) navDropdown.classList.remove('is-open');
+    });
+  }
+
   /* ===== MENU TABS ===== */
   const tabs = document.querySelectorAll('.menu__tab');
   const panels = document.querySelectorAll('.menu__panel');
