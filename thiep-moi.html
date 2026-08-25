@@ -36,8 +36,33 @@
 <main class="invite-main">
   <div class="container">
 
+    <!-- ===== THƯ VIỆN MẪU THIỆP ===== -->
+    <section id="galleryMode">
+      <div class="invite-intro">
+        <span class="section-label section-label--center">Miễn Phí — Không Cần Đăng Ký</span>
+        <h1 class="section-title section-title--center">Mẫu Thiệp Đẹp Cho Mọi Dịp</h1>
+        <p class="section-subtitle">Chọn mẫu theo phong cách của bạn — chỉ cần thay tên và thông tin. Có ngay link thiệp riêng để gửi Zalo, Messenger, hoặc tải ảnh về máy.</p>
+      </div>
+      <div class="invite-pills" id="categoryPills"></div>
+      <div class="template-grid" id="templateGrid"></div>
+      <div class="invite-gallery-footer">
+        <button type="button" class="btn btn--outline" id="btnFreeDesign">✎ Hoặc Tự Thiết Kế Từ Đầu</button>
+      </div>
+    </section>
+
+    <!-- ===== MẪU DEMO PHÓNG TO ===== -->
+    <div class="demo-modal" id="demoModal" hidden>
+      <div class="demo-modal__backdrop" id="demoBackdrop"></div>
+      <div class="demo-modal__panel">
+        <button type="button" class="demo-modal__close" id="demoClose" aria-label="Đóng">✕</button>
+        <div class="invite-card invite-card--large" id="demoCard"></div>
+        <button type="button" class="btn btn--primary btn--lg" id="demoUseBtn">Dùng Mẫu Này</button>
+      </div>
+    </div>
+
     <!-- ===== CHẾ ĐỘ TẠO THIỆP ===== -->
-    <section id="createMode">
+    <section id="createMode" hidden>
+      <button type="button" class="btn btn--ghost-red btn--sm invite-back-btn" id="btnBackGallery">← Xem Mẫu Khác</button>
       <div class="invite-intro">
         <span class="section-label section-label--center">Miễn Phí — Không Cần Đăng Ký</span>
         <h1 class="section-title section-title--center">Tạo Thiệp Mời Online</h1>
@@ -49,6 +74,16 @@
           <div class="form-group">
             <label>Loại thiệp</label>
             <div class="invite-type-grid" id="typeGrid"></div>
+          </div>
+
+          <div class="form-group">
+            <label>Màu sắc</label>
+            <div class="invite-palette-grid" id="paletteGrid"></div>
+          </div>
+
+          <div class="form-group">
+            <label>Kiểu trình bày</label>
+            <div class="invite-layout-grid" id="layoutGrid"></div>
           </div>
 
           <div class="form-group">
@@ -132,7 +167,7 @@
         </form>
 
         <div class="invite-preview-wrap">
-          <div class="invite-card" id="inviteCard" data-theme="ruby"></div>
+          <div class="invite-card layout-classic" id="inviteCard"></div>
         </div>
       </div>
     </section>

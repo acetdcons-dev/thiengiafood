@@ -2,54 +2,91 @@
 
 const EVENT_TYPES = {
   cuoi: {
-    theme: 'ruby', label: 'Đám Cưới', eyebrow: 'THIỆP MỜI',
+    palette: 'ruby', label: 'Đám Cưới', eyebrow: 'THIỆP MỜI',
     name1Label: 'Tên Chú Rể', name2Label: 'Tên Cô Dâu', showName2: true,
     defaultMsg: 'Trân trọng kính mời quý khách đến chung vui cùng gia đình chúng tôi trong ngày lễ thành hôn',
     defaultHost: 'Gia đình hai họ'
   },
   hoi: {
-    theme: 'ruby', label: 'Lễ Ăn Hỏi', eyebrow: 'THIỆP MỜI',
+    palette: 'terracotta', label: 'Lễ Ăn Hỏi', eyebrow: 'THIỆP MỜI',
     name1Label: 'Tên Chú Rể', name2Label: 'Tên Cô Dâu', showName2: true,
     defaultMsg: 'Trân trọng kính mời quý khách đến dự lễ ăn hỏi của chúng tôi',
     defaultHost: 'Gia đình hai họ'
   },
   thoinoi: {
-    theme: 'pastel', label: 'Thôi Nôi', eyebrow: 'THIỆP MỜI THÔI NÔI',
+    palette: 'pastel', label: 'Thôi Nôi', eyebrow: 'THIỆP MỜI THÔI NÔI',
     name1Label: 'Tên Bé', name2Label: '', showName2: false,
     defaultMsg: 'Kính mời đến chung vui cùng gia đình trong ngày thôi nôi của bé',
     defaultHost: 'Gia đình bé'
   },
   sinhnhat: {
-    theme: 'festive', label: 'Sinh Nhật', eyebrow: 'THIỆP MỜI SINH NHẬT',
+    palette: 'gold', label: 'Sinh Nhật', eyebrow: 'THIỆP MỜI SINH NHẬT',
     name1Label: 'Tên Nhân Vật Chính', name2Label: '', showName2: false,
     defaultMsg: 'Kính mời đến chung vui cùng gia đình trong ngày sinh nhật',
     defaultHost: ''
   },
   tangia: {
-    theme: 'prosper', label: 'Tân Gia', eyebrow: 'THIỆP MỜI TÂN GIA',
+    palette: 'jade', label: 'Tân Gia', eyebrow: 'THIỆP MỜI TÂN GIA',
     name1Label: 'Tên Gia Chủ', name2Label: '', showName2: false,
     defaultMsg: 'Kính mời đến chung vui cùng gia đình trong ngày tân gia, chúc nhà mới an khang thịnh vượng',
     defaultHost: 'Gia đình'
   },
   khaitruong: {
-    theme: 'prosper', label: 'Khai Trương', eyebrow: 'THIỆP MỜI KHAI TRƯƠNG',
+    palette: 'royal', label: 'Khai Trương', eyebrow: 'THIỆP MỜI KHAI TRƯƠNG',
     name1Label: 'Tên Cửa Hàng / Công Ty', name2Label: '', showName2: false,
     defaultMsg: 'Trân trọng kính mời đến dự lễ khai trương, chúc buôn may bán đắt',
     defaultHost: ''
   }
 };
 
-const THEME_COLORS = {
-  ruby:    { bgFrom: '#3f0f15', bgTo: '#2b0a0e', accent: '#e9c26e', text: '#fdf6ea', sub: 'rgba(253,246,234,0.85)' },
-  pastel:  { bgFrom: '#fdf6ea', bgTo: '#f8ecd8', accent: '#bd8f2f', text: '#62131b', sub: 'rgba(58,53,48,0.85)' },
-  festive: { bgFrom: '#62131b', bgTo: '#85181f', accent: '#f6e3a3', text: '#fdf6ea', sub: 'rgba(253,246,234,0.88)' },
-  prosper: { bgFrom: '#2b0a0e', bgTo: '#62131b', accent: '#e9c26e', text: '#fdf6ea', sub: 'rgba(253,246,234,0.85)' }
+const COLOR_PALETTES = {
+  ruby:       { name: 'Đỏ Ruby',        bgFrom: '#3f0f15', bgTo: '#2b0a0e', accent: '#e9c26e', text: '#fdf6ea', sub: 'rgba(253,246,234,0.85)' },
+  gold:       { name: 'Vàng Gold',      bgFrom: '#6b4a12', bgTo: '#3d2a08', accent: '#fdf6ea', text: '#fdf6ea', sub: 'rgba(253,246,234,0.85)' },
+  pastel:     { name: 'Hồng Pastel',    bgFrom: '#fdf1f4', bgTo: '#f5d8e0', accent: '#c77b96', text: '#7a2f45', sub: 'rgba(122,47,69,0.75)' },
+  jade:       { name: 'Xanh Ngọc',      bgFrom: '#0d3b34', bgTo: '#082720', accent: '#c9e8b8', text: '#eefaf1', sub: 'rgba(238,250,241,0.85)' },
+  lavender:   { name: 'Tím Lavender',   bgFrom: '#3a2352', bgTo: '#211230', accent: '#e3c9f5', text: '#f5eeff', sub: 'rgba(245,238,255,0.85)' },
+  royal:      { name: 'Xanh Hoàng Gia', bgFrom: '#0d2a4a', bgTo: '#081a30', accent: '#d9b968', text: '#f0f5fb', sub: 'rgba(240,245,251,0.85)' },
+  terracotta: { name: 'Cam Đất',        bgFrom: '#7a3418', bgTo: '#4a1f0d', accent: '#f2c879', text: '#fdf1e4', sub: 'rgba(253,241,228,0.85)' },
+  noir:       { name: 'Đen Sang Trọng', bgFrom: '#242220', bgTo: '#0a0908', accent: '#d4af37', text: '#fdf6ea', sub: 'rgba(253,246,234,0.8)' },
+  ivory:      { name: 'Kem Thanh Lịch', bgFrom: '#fdf6ea', bgTo: '#f0e4c8', accent: '#a8791f', text: '#4a1a1a', sub: 'rgba(74,26,26,0.75)' }
 };
+
+const LAYOUT_STYLES = {
+  classic: { name: 'Cổ Điển' },
+  floral:  { name: 'Hoa Văn' },
+  minimal: { name: 'Tối Giản' }
+};
+
+const CATEGORIES = [
+  { key: 'all', label: 'Tất cả', short: '' },
+  { key: 'cuoihoi', label: '💍 Cưới & Ăn Hỏi', short: 'Cưới & Ăn Hỏi' },
+  { key: 'thoinoisinhnhat', label: '🎂 Thôi Nôi & Sinh Nhật', short: 'Thôi Nôi & Sinh Nhật' },
+  { key: 'sukien', label: '🎉 Tân Gia & Khai Trương', short: 'Tân Gia & Khai Trương' }
+];
+
+// Danh sách mẫu thiệp cho thư viện chọn mẫu. Mỗi mẫu = 1 tổ hợp loại thiệp +
+// màu + kiểu trình bày có sẵn. Trường "thumbnail" hiện để trống (null) nên
+// gallery tự vẽ bản xem trước "sống" bằng đúng hệ màu/kiểu chữ thật của
+// thiệp. KHI CÓ ẢNH MẪU THIẾT KẾ RIÊNG: chỉ cần điền đường dẫn ảnh vào
+// "thumbnail" (ví dụ: 'assets/img/templates/cuoi-ruby.jpg') — ảnh đó sẽ tự
+// động thay thế bản xem trước, không cần sửa gì khác.
+const TEMPLATES = [
+  { id: 'cuoi-ruby',        type: 'cuoi',       palette: 'ruby',       layout: 'classic', category: 'cuoihoi',          name: 'Cổ Điển — Đỏ Ruby',        desc: 'Sang trọng, ấm cúng, tông đỏ ruby ánh vàng truyền thống.', sample1: 'Văn A', sample2: 'Thị B', thumbnail: null },
+  { id: 'cuoi-ivory',       type: 'cuoi',       palette: 'ivory',      layout: 'floral',  category: 'cuoihoi',          name: 'Hoa Văn — Kem Thanh Lịch', desc: 'Nền kem nhẹ nhàng, hoạ tiết góc tinh tế, hiện đại.',       sample1: 'Văn A', sample2: 'Thị B', thumbnail: null },
+  { id: 'hoi-terracotta',   type: 'hoi',        palette: 'terracotta', layout: 'classic', category: 'cuoihoi',          name: 'Lễ Ăn Hỏi — Cam Đất',      desc: 'Tông cam đất ấm áp, phong cách truyền thống.',             sample1: 'Văn A', sample2: 'Thị B', thumbnail: null },
+  { id: 'thoinoi-pastel',   type: 'thoinoi',    palette: 'pastel',     layout: 'floral',  category: 'thoinoisinhnhat',  name: 'Thôi Nôi — Hồng Pastel',   desc: 'Dịu dàng, đáng yêu, phù hợp cho bé trai lẫn bé gái.',      sample1: 'Bé Bin', sample2: '', thumbnail: null },
+  { id: 'sinhnhat-gold',    type: 'sinhnhat',   palette: 'gold',       layout: 'classic', category: 'thoinoisinhnhat',  name: 'Sinh Nhật — Vàng Rực Rỡ',  desc: 'Nổi bật, vui tươi, hợp mọi lứa tuổi.',                     sample1: 'Minh Khuê', sample2: '', thumbnail: null },
+  { id: 'sinhnhat-lavender',type: 'sinhnhat',   palette: 'lavender',   layout: 'minimal', category: 'thoinoisinhnhat',  name: 'Sinh Nhật — Tím Lavender', desc: 'Phong cách tối giản, hiện đại, thanh lịch.',               sample1: 'Minh Khuê', sample2: '', thumbnail: null },
+  { id: 'tangia-jade',      type: 'tangia',     palette: 'jade',       layout: 'classic', category: 'sukien',           name: 'Tân Gia — Xanh Ngọc',      desc: 'Tươi mới, mang ý nghĩa an khang thịnh vượng.',             sample1: 'Gia Đình Anh Khoa', sample2: '', thumbnail: null },
+  { id: 'khaitruong-royal', type: 'khaitruong', palette: 'royal',      layout: 'classic', category: 'sukien',           name: 'Khai Trương — Hoàng Gia',  desc: 'Sang trọng, chuyên nghiệp cho cửa hàng/công ty mới.',      sample1: 'Cửa Hàng ABC', sample2: '', thumbnail: null },
+  { id: 'khaitruong-noir',  type: 'khaitruong', palette: 'noir',       layout: 'minimal', category: 'sukien',           name: 'Khai Trương — Đen Sang Trọng', desc: 'Tối giản, đẳng cấp, hiện đại.',                        sample1: 'Công Ty XYZ', sample2: '', thumbnail: null }
+];
 
 const WEEKDAYS = ['Chủ Nhật', 'Thứ Hai', 'Thứ Ba', 'Thứ Tư', 'Thứ Năm', 'Thứ Sáu', 'Thứ Bảy'];
 
 const ORNAMENT_TOP = '<svg class="invite-card__ornament" viewBox="0 0 200 40" fill="none" stroke="currentColor" stroke-width="1.2" aria-hidden="true"><path d="M0 20 H74 M126 20 H200"/><circle cx="100" cy="20" r="13"/><path d="M100 9 V31 M89 20 H111" stroke-width="0.8" opacity="0.6"/></svg>';
 const ORNAMENT_BOTTOM = '<svg class="invite-card__ornament invite-card__ornament--bottom" viewBox="0 0 200 40" fill="none" stroke="currentColor" stroke-width="1.2" aria-hidden="true"><path d="M0 20 H74 M126 20 H200"/><circle cx="100" cy="20" r="6"/></svg>';
+const CORNER_FLOURISH = '<svg viewBox="0 0 46 46" fill="none" stroke="currentColor" stroke-width="1.1" aria-hidden="true"><path d="M2 2 V20 M2 2 H20"/><path d="M2 2 C 14 4, 20 10, 22 22" stroke-width="0.8" opacity="0.7"/><circle cx="9" cy="9" r="1.6" fill="currentColor" stroke="none"/></svg>';
 
 const MAX_PHOTO_DIM = 220;
 const PHOTO_QUALITY = 0.65;
@@ -58,8 +95,12 @@ const AI_COUNT_KEY = 'tgf_ai_generate_count';
 const PHOTO_DATA_RE = /^data:image\/(png|jpe?g|webp);base64,[A-Za-z0-9+/=]+$/;
 
 let currentType = 'cuoi';
+let currentPalette = 'ruby';
+let currentLayout = 'classic';
 let currentPhotoData = null;
 let currentAIBackground = null;
+let currentCategory = 'all';
+let demoTplId = null;
 
 /* ===== HELPERS ===== */
 function escapeHtml(str) {
@@ -144,6 +185,7 @@ function drawImageCover(ctx, img, x, y, w, h) {
 /* ===== CARD RENDER (HTML preview) ===== */
 function renderCardHTML(data) {
   const cfg = EVENT_TYPES[data.type] || EVENT_TYPES.cuoi;
+  const layout = data.layout || 'classic';
   const title = (cfg.showName2 && data.name2)
     ? `${escapeHtml(data.name1 || '...')} <span class="invite-amp">&amp;</span> ${escapeHtml(data.name2)}`
     : escapeHtml(data.name1 || cfg.label);
@@ -153,8 +195,12 @@ function renderCardHTML(data) {
   const photoHTML = isValidPhotoData(data.photo)
     ? `<img class="invite-card__photo" src="${data.photo}" alt="">`
     : '';
+  const cornersHTML = layout === 'floral'
+    ? `<span class="invite-card__corner invite-card__corner--tl">${CORNER_FLOURISH}</span><span class="invite-card__corner invite-card__corner--br">${CORNER_FLOURISH}</span>`
+    : '';
 
   return `
+    ${cornersHTML}
     ${ORNAMENT_TOP}
     ${photoHTML}
     <span class="invite-card__eyebrow">${escapeHtml(cfg.eyebrow)}</span>
@@ -168,6 +214,18 @@ function renderCardHTML(data) {
     ${ORNAMENT_BOTTOM}
     <div class="invite-card__brand">Thiệp được tạo bởi <a href="index.html" target="_blank" rel="noopener">Thiên Gia Food</a></div>
   `;
+}
+
+function applyPaletteAndLayout(card, paletteKey, layoutKey) {
+  const pal = COLOR_PALETTES[paletteKey || currentPalette] || COLOR_PALETTES.ruby;
+  const layout = layoutKey || currentLayout;
+  card.style.setProperty('--card-bg-from', pal.bgFrom);
+  card.style.setProperty('--card-bg-to', pal.bgTo);
+  card.style.setProperty('--card-accent', pal.accent);
+  card.style.setProperty('--card-text', pal.text);
+  card.style.setProperty('--card-sub', pal.sub);
+  card.classList.remove('layout-classic', 'layout-floral', 'layout-minimal');
+  card.classList.add(`layout-${layout}`);
 }
 
 function applyAIBackground(card) {
@@ -194,7 +252,8 @@ async function drawCardToCanvas(canvas, data, aiBg) {
     try { await document.fonts.ready; } catch (e) { /* ignore */ }
   }
   const cfg = EVENT_TYPES[data.type] || EVENT_TYPES.cuoi;
-  const th = THEME_COLORS[cfg.theme];
+  const th = COLOR_PALETTES[data.palette] || COLOR_PALETTES[cfg.palette] || COLOR_PALETTES.ruby;
+  const layout = data.layout || 'classic';
   const ctx = canvas.getContext('2d');
   const W = canvas.width, H = canvas.height;
   ctx.clearRect(0, 0, W, H);
@@ -218,9 +277,17 @@ async function drawCardToCanvas(canvas, data, aiBg) {
   const subColor = usedAIBg ? 'rgba(253,246,234,0.88)' : th.sub;
   const accentColor = usedAIBg ? '#f6e3a3' : th.accent;
 
-  ctx.strokeStyle = accentColor;
-  ctx.lineWidth = 3;
-  ctx.strokeRect(40, 40, W - 80, H - 80);
+  if (layout !== 'minimal') {
+    ctx.strokeStyle = accentColor;
+    ctx.lineWidth = layout === 'floral' ? 1.5 : 3;
+    ctx.globalAlpha = layout === 'floral' ? 0.6 : 1;
+    ctx.strokeRect(40, 40, W - 80, H - 80);
+    ctx.globalAlpha = 1;
+    if (layout === 'classic') {
+      ctx.lineWidth = 1;
+      ctx.strokeRect(58, 58, W - 116, H - 116);
+    }
+  }
 
   ctx.textAlign = 'center';
   let y = H * 0.13;
@@ -305,6 +372,8 @@ async function drawCardToCanvas(canvas, data, aiBg) {
 function collectFormData() {
   const data = {
     type: currentType,
+    palette: currentPalette,
+    layout: currentLayout,
     name1: document.getElementById('name1').value.trim(),
     name2: document.getElementById('name2').value.trim(),
     eventDate: document.getElementById('eventDate').value,
@@ -320,10 +389,9 @@ function collectFormData() {
 
 function updatePreview() {
   const data = collectFormData();
-  const cfg = EVENT_TYPES[data.type] || EVENT_TYPES.cuoi;
   const card = document.getElementById('inviteCard');
-  card.dataset.theme = cfg.theme;
   card.innerHTML = renderCardHTML(data);
+  applyPaletteAndLayout(card);
   applyAIBackground(card);
 }
 
@@ -337,9 +405,39 @@ function buildTypeGrid() {
   });
 }
 
-function selectType(key) {
-  currentType = key;
-  document.querySelectorAll('.invite-type-btn').forEach(b => b.classList.toggle('is-active', b.dataset.type === key));
+function buildPaletteGrid() {
+  const grid = document.getElementById('paletteGrid');
+  grid.innerHTML = Object.entries(COLOR_PALETTES).map(([key, pal]) =>
+    `<button type="button" class="invite-palette-btn" data-palette="${key}" title="${pal.name}" style="background:linear-gradient(135deg, ${pal.bgFrom}, ${pal.bgTo})"></button>`
+  ).join('');
+  grid.querySelectorAll('.invite-palette-btn').forEach(btn => {
+    btn.addEventListener('click', () => selectPalette(btn.dataset.palette));
+  });
+}
+
+function buildLayoutGrid() {
+  const grid = document.getElementById('layoutGrid');
+  grid.innerHTML = Object.entries(LAYOUT_STYLES).map(([key, st]) =>
+    `<button type="button" class="invite-layout-btn" data-layout="${key}">${st.name}</button>`
+  ).join('');
+  grid.querySelectorAll('.invite-layout-btn').forEach(btn => {
+    btn.addEventListener('click', () => selectLayout(btn.dataset.layout));
+  });
+}
+
+function selectPalette(key) {
+  currentPalette = key;
+  document.querySelectorAll('.invite-palette-btn').forEach(b => b.classList.toggle('is-active', b.dataset.palette === key));
+  updatePreview();
+}
+
+function selectLayout(key) {
+  currentLayout = key;
+  document.querySelectorAll('.invite-layout-btn').forEach(b => b.classList.toggle('is-active', b.dataset.layout === key));
+  updatePreview();
+}
+
+function applyTypeUI(key) {
   const cfg = EVENT_TYPES[key];
   document.getElementById('name1Label').textContent = cfg.name1Label;
   document.getElementById('name2Group').style.display = cfg.showName2 ? '' : 'none';
@@ -349,7 +447,117 @@ function selectType(key) {
   currentAIBackground = null;
   document.getElementById('btnResetAI').hidden = true;
   document.getElementById('aiStatus').textContent = '';
+}
+
+function selectType(key) {
+  currentType = key;
+  document.querySelectorAll('.invite-type-btn').forEach(b => b.classList.toggle('is-active', b.dataset.type === key));
+  applyTypeUI(key);
+  const cfg = EVENT_TYPES[key];
+  selectPalette(cfg.palette);
+  selectLayout('classic');
+}
+
+/* ===== THƯ VIỆN MẪU (gallery) ===== */
+function buildCategoryPills() {
+  const wrap = document.getElementById('categoryPills');
+  wrap.innerHTML = CATEGORIES.map(c => `<button type="button" class="invite-pill" data-cat="${c.key}">${c.label}</button>`).join('');
+  wrap.querySelectorAll('.invite-pill').forEach(btn => {
+    btn.addEventListener('click', () => {
+      currentCategory = btn.dataset.cat;
+      wrap.querySelectorAll('.invite-pill').forEach(b => b.classList.toggle('is-active', b === btn));
+      renderGallery();
+    });
+  });
+  wrap.querySelector('[data-cat="all"]').classList.add('is-active');
+}
+
+function sampleDataFor(tpl) {
+  return {
+    type: tpl.type, palette: tpl.palette, layout: tpl.layout,
+    name1: tpl.sample1 || '', name2: tpl.sample2 || '',
+    eventDate: '', eventTime: '', venue: '', address: '', message: '', hostName: ''
+  };
+}
+
+function templateCardHTML(tpl) {
+  const cat = CATEGORIES.find(c => c.key === tpl.category);
+  const thumb = tpl.thumbnail
+    ? `<img class="template-card__thumb-img" src="${tpl.thumbnail}" alt="${escapeHtml(tpl.name)}">`
+    : `<div class="invite-card invite-card--thumb" data-thumb="${tpl.id}" aria-hidden="true"></div>`;
+  return `
+    <article class="template-card">
+      <div class="template-card__thumb-wrap">${thumb}</div>
+      <span class="template-card__badge">${escapeHtml(cat ? cat.short : '')}</span>
+      <h3 class="template-card__name">${escapeHtml(tpl.name)}</h3>
+      <p class="template-card__desc">${escapeHtml(tpl.desc)}</p>
+      <div class="template-card__actions">
+        <button type="button" class="btn btn--outline" data-demo="${tpl.id}">👁 Xem Demo</button>
+        <button type="button" class="btn btn--primary" data-use="${tpl.id}">Dùng Mẫu Này</button>
+      </div>
+    </article>
+  `;
+}
+
+function renderGallery() {
+  const grid = document.getElementById('templateGrid');
+  const list = currentCategory === 'all' ? TEMPLATES : TEMPLATES.filter(t => t.category === currentCategory);
+  grid.innerHTML = list.map(templateCardHTML).join('');
+
+  list.forEach(tpl => {
+    if (tpl.thumbnail) return;
+    const holder = grid.querySelector(`[data-thumb="${tpl.id}"]`);
+    if (!holder) return;
+    holder.innerHTML = renderCardHTML(sampleDataFor(tpl));
+    applyPaletteAndLayout(holder, tpl.palette, tpl.layout);
+  });
+
+  grid.querySelectorAll('[data-use]').forEach(btn => btn.addEventListener('click', () => useTemplate(btn.dataset.use)));
+  grid.querySelectorAll('[data-demo]').forEach(btn => btn.addEventListener('click', () => showDemo(btn.dataset.demo)));
+}
+
+function useTemplate(id) {
+  const tpl = TEMPLATES.find(t => t.id === id);
+  if (!tpl) return;
+  currentType = tpl.type;
+  document.querySelectorAll('.invite-type-btn').forEach(b => b.classList.toggle('is-active', b.dataset.type === tpl.type));
+  applyTypeUI(tpl.type);
+  currentPalette = tpl.palette;
+  currentLayout = tpl.layout;
+  document.querySelectorAll('.invite-palette-btn').forEach(b => b.classList.toggle('is-active', b.dataset.palette === tpl.palette));
+  document.querySelectorAll('.invite-layout-btn').forEach(b => b.classList.toggle('is-active', b.dataset.layout === tpl.layout));
   updatePreview();
+  showCreateMode();
+  const n1 = document.getElementById('name1');
+  if (n1) n1.focus();
+}
+
+function showDemo(id) {
+  const tpl = TEMPLATES.find(t => t.id === id);
+  if (!tpl) return;
+  demoTplId = id;
+  const card = document.getElementById('demoCard');
+  card.innerHTML = renderCardHTML(sampleDataFor(tpl));
+  card.className = 'invite-card invite-card--large';
+  applyPaletteAndLayout(card, tpl.palette, tpl.layout);
+  document.getElementById('demoModal').hidden = false;
+}
+
+function closeDemo() {
+  document.getElementById('demoModal').hidden = true;
+  demoTplId = null;
+}
+
+function showCreateMode() {
+  document.getElementById('galleryMode').hidden = true;
+  document.getElementById('createMode').hidden = false;
+  window.scrollTo({ top: 0, behavior: 'smooth' });
+}
+
+function showGalleryMode() {
+  document.getElementById('createMode').hidden = true;
+  document.getElementById('galleryMode').hidden = false;
+  window.scrollTo({ top: 0, behavior: 'smooth' });
 }
 
 /* ===== ẢNH CÁ NHÂN ===== */
@@ -519,12 +727,15 @@ function onResetAI() {
 
 /* ===== VIEW MODE (mở qua link chia sẻ) ===== */
 function showViewMode(data) {
+  document.getElementById('galleryMode').hidden = true;
   document.getElementById('createMode').hidden = true;
   document.getElementById('viewMode').hidden = false;
   const cfg = EVENT_TYPES[data.type] || EVENT_TYPES.cuoi;
+  currentPalette = (data.palette && COLOR_PALETTES[data.palette]) ? data.palette : cfg.palette;
+  currentLayout = (data.layout && LAYOUT_STYLES[data.layout]) ? data.layout : 'classic';
   const card = document.getElementById('viewCard');
-  card.dataset.theme = cfg.theme;
   card.innerHTML = renderCardHTML(data);
+  applyPaletteAndLayout(card);
   const titleName = (cfg.showName2 && data.name2) ? `${data.name1} & ${data.name2}` : (data.name1 || cfg.label);
   document.title = `${titleName} — Thiệp Mời · Thiên Gia Food`;
 }
@@ -532,6 +743,8 @@ function showViewMode(data) {
 /* ===== INIT ===== */
 function initCreateMode() {
   buildTypeGrid();
+  buildPaletteGrid();
+  buildLayoutGrid();
   selectType('cuoi');
   document.getElementById('inviteForm').addEventListener('input', updatePreview);
   document.getElementById('btnShare').addEventListener('click', onShare);
@@ -541,6 +754,23 @@ function initCreateMode() {
   document.getElementById('btnRemovePhoto').addEventListener('click', removePhoto);
   document.getElementById('btnGenerateAI').addEventListener('click', onGenerateAI);
   document.getElementById('btnResetAI').addEventListener('click', onResetAI);
+  document.getElementById('btnBackGallery').addEventListener('click', showGalleryMode);
+}
+
+function initGallery() {
+  buildCategoryPills();
+  renderGallery();
+  document.getElementById('btnFreeDesign').addEventListener('click', () => {
+    selectType('cuoi');
+    showCreateMode();
+  });
+  document.getElementById('demoClose').addEventListener('click', closeDemo);
+  document.getElementById('demoBackdrop').addEventListener('click', closeDemo);
+  document.getElementById('demoUseBtn').addEventListener('click', () => {
+    const id = demoTplId;
+    closeDemo();
+    if (id) useTemplate(id);
+  });
 }
 
 document.addEventListener('DOMContentLoaded', () => {
@@ -552,8 +782,9 @@ document.addEventListener('DOMContentLoaded', () => {
       showViewMode(data);
       return;
     } catch (e) {
-      /* link lỗi/hỏng -> rơi về chế độ tạo thiệp */
+      /* link lỗi/hỏng -> rơi về thư viện mẫu */
     }
   }
   initCreateMode();
+  initGallery();
 });
