@@ -36,6 +36,18 @@ const EVENT_TYPES = {
     name1Label: 'Tên Cửa Hàng / Công Ty', name2Label: '', showName2: false,
     defaultMsg: 'Trân trọng kính mời đến dự lễ khai trương, chúc buôn may bán đắt',
     defaultHost: ''
+  },
+  congty: {
+    palette: 'noir', label: 'Tiệc Công Ty', eyebrow: 'THƯ MỜI',
+    name1Label: 'Tên Sự Kiện / Công Ty', name2Label: '', showName2: false,
+    defaultMsg: 'Trân trọng kính mời quý anh/chị tham dự chương trình cùng công ty',
+    defaultHost: 'Ban Tổ Chức'
+  },
+  damgio: {
+    palette: 'solemn', label: 'Đám Giỗ', eyebrow: 'KÍNH MỜI',
+    name1Label: 'Họ Tên Người Được Giỗ', name2Label: '', showName2: false,
+    defaultMsg: 'Nhân ngày giỗ, kính mời đến thắp nén hương tưởng nhớ và dùng bữa cơm thân mật cùng gia đình',
+    defaultHost: 'Gia đình'
   }
 };
 
@@ -48,7 +60,8 @@ const COLOR_PALETTES = {
   royal:      { name: 'Xanh Hoàng Gia', bgFrom: '#0d2a4a', bgTo: '#081a30', accent: '#d9b968', text: '#f0f5fb', sub: 'rgba(240,245,251,0.85)' },
   terracotta: { name: 'Cam Đất',        bgFrom: '#7a3418', bgTo: '#4a1f0d', accent: '#f2c879', text: '#fdf1e4', sub: 'rgba(253,241,228,0.85)' },
   noir:       { name: 'Đen Sang Trọng', bgFrom: '#242220', bgTo: '#0a0908', accent: '#d4af37', text: '#fdf6ea', sub: 'rgba(253,246,234,0.8)' },
-  ivory:      { name: 'Kem Thanh Lịch', bgFrom: '#fdf6ea', bgTo: '#f0e4c8', accent: '#a8791f', text: '#4a1a1a', sub: 'rgba(74,26,26,0.75)' }
+  ivory:      { name: 'Kem Thanh Lịch', bgFrom: '#fdf6ea', bgTo: '#f0e4c8', accent: '#a8791f', text: '#4a1a1a', sub: 'rgba(74,26,26,0.75)' },
+  solemn:     { name: 'Xám Trang Nghiêm', bgFrom: '#3d4148', bgTo: '#1b1d21', accent: '#c9cdd3', text: '#f1f2f4', sub: 'rgba(241,242,244,0.8)' }
 };
 
 const LAYOUT_STYLES = {
@@ -61,7 +74,9 @@ const CATEGORIES = [
   { key: 'all', label: 'Tất cả', short: '' },
   { key: 'cuoihoi', label: '💍 Cưới & Ăn Hỏi', short: 'Cưới & Ăn Hỏi' },
   { key: 'thoinoisinhnhat', label: '🎂 Thôi Nôi & Sinh Nhật', short: 'Thôi Nôi & Sinh Nhật' },
-  { key: 'sukien', label: '🎉 Tân Gia & Khai Trương', short: 'Tân Gia & Khai Trương' }
+  { key: 'congty', label: '🏢 Tiệc Công Ty', short: 'Tiệc Công Ty' },
+  { key: 'sukien', label: '🎉 Tân Gia & Khai Trương', short: 'Tân Gia & Khai Trương' },
+  { key: 'tangle', label: '🕯️ Tang Lễ & Giỗ Chạp', short: 'Tang Lễ & Giỗ Chạp' }
 ];
 
 // Danh sách mẫu thiệp cho thư viện chọn mẫu. Mỗi mẫu = 1 tổ hợp loại thiệp +
@@ -77,9 +92,13 @@ const TEMPLATES = [
   { id: 'thoinoi-pastel',   type: 'thoinoi',    palette: 'pastel',     layout: 'floral',  category: 'thoinoisinhnhat',  name: 'Thôi Nôi — Hồng Pastel',   desc: 'Dịu dàng, đáng yêu, phù hợp cho bé trai lẫn bé gái.',      sample1: 'Bé Bin', sample2: '', thumbnail: null },
   { id: 'sinhnhat-gold',    type: 'sinhnhat',   palette: 'gold',       layout: 'classic', category: 'thoinoisinhnhat',  name: 'Sinh Nhật — Vàng Rực Rỡ',  desc: 'Nổi bật, vui tươi, hợp mọi lứa tuổi.',                     sample1: 'Minh Khuê', sample2: '', thumbnail: null },
   { id: 'sinhnhat-lavender',type: 'sinhnhat',   palette: 'lavender',   layout: 'minimal', category: 'thoinoisinhnhat',  name: 'Sinh Nhật — Tím Lavender', desc: 'Phong cách tối giản, hiện đại, thanh lịch.',               sample1: 'Minh Khuê', sample2: '', thumbnail: null },
+  { id: 'congty-noir',      type: 'congty',     palette: 'noir',       layout: 'classic', category: 'congty',           name: 'Gala Cuối Năm — Đen Sang Trọng', desc: 'Trang trọng, chuyên nghiệp cho tiệc tổng kết, gala công ty.', sample1: 'Công Ty ABC', sample2: '', thumbnail: null },
+  { id: 'congty-royal',     type: 'congty',     palette: 'royal',      layout: 'minimal', category: 'congty',           name: 'Hội Nghị — Xanh Hoàng Gia', desc: 'Hiện đại, tối giản cho hội nghị, team building.',         sample1: 'Công Ty ABC', sample2: '', thumbnail: null },
   { id: 'tangia-jade',      type: 'tangia',     palette: 'jade',       layout: 'classic', category: 'sukien',           name: 'Tân Gia — Xanh Ngọc',      desc: 'Tươi mới, mang ý nghĩa an khang thịnh vượng.',             sample1: 'Gia Đình Anh Khoa', sample2: '', thumbnail: null },
   { id: 'khaitruong-royal', type: 'khaitruong', palette: 'royal',      layout: 'classic', category: 'sukien',           name: 'Khai Trương — Hoàng Gia',  desc: 'Sang trọng, chuyên nghiệp cho cửa hàng/công ty mới.',      sample1: 'Cửa Hàng ABC', sample2: '', thumbnail: null },
-  { id: 'khaitruong-noir',  type: 'khaitruong', palette: 'noir',       layout: 'minimal', category: 'sukien',           name: 'Khai Trương — Đen Sang Trọng', desc: 'Tối giản, đẳng cấp, hiện đại.',                        sample1: 'Công Ty XYZ', sample2: '', thumbnail: null }
+  { id: 'khaitruong-noir',  type: 'khaitruong', palette: 'noir',       layout: 'minimal', category: 'sukien',           name: 'Khai Trương — Đen Sang Trọng', desc: 'Tối giản, đẳng cấp, hiện đại.',                        sample1: 'Công Ty XYZ', sample2: '', thumbnail: null },
+  { id: 'damgio-solemn',    type: 'damgio',     palette: 'solemn',     layout: 'minimal', category: 'tangle',           name: 'Đám Giỗ — Xám Trang Nghiêm', desc: 'Trang nghiêm, thanh tịnh, phù hợp lễ giỗ, tưởng niệm.',   sample1: 'Cụ Nguyễn Văn C', sample2: '', thumbnail: null },
+  { id: 'damgio-ivory',     type: 'damgio',     palette: 'ivory',      layout: 'minimal', category: 'tangle',           name: 'Giỗ Chạp — Kem Thanh Nhã', desc: 'Nhẹ nhàng, ấm cúng cho ngày giỗ gia tiên.',                sample1: 'Cụ Nguyễn Văn C', sample2: '', thumbnail: null }
 ];
 
 const WEEKDAYS = ['Chủ Nhật', 'Thứ Hai', 'Thứ Ba', 'Thứ Tư', 'Thứ Năm', 'Thứ Sáu', 'Thứ Bảy'];
