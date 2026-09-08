@@ -16,4 +16,13 @@
 .article[open] summary { border-bottom: 1px solid rgba(189,143,47,.25); }
 .article__content { padding: 28px clamp(24px, 5vw, 60px) 36px; color: var(--ink-700); }
 .article__content h2 { color: var(--maroon-900); font-size: 1.25rem; margin: 22px 0 8px; }
+.article__content p { line-height: 1.8; }
+.article__content ul, .article__content ol { display: grid; gap: 9px; margin: 14px 0 20px; padding-left: 22px; }
+.article__content ul { list-style: disc; }
+.article__content ol { list-style: decimal; }
+.article__content li { line-height: 1.65; }
+.article__cta { display: flex; align-items: center; justify-content: space-between; gap: 18px; margin-top: 30px; padding: 20px 22px; background: var(--cream-200); border-left: 3px solid var(--gold-500); }
+.article__cta strong { color: var(--maroon-900); }
+.article__cta a { color: var(--maroon-700); font-weight: 800; }
+@media (max-width: 520px) { .article__cta { align-items: flex-start; flex-direction: column; } }
 @media (max-width: 700px) { .news-hero { padding: 120px 0 56px; } .article summary { grid-template-columns: 1fr; gap: 0; } .article summary img { height: auto; aspect-ratio: 16/9; } .article summary span { padding: 20px; } .article summary strong { font-size: 1.2rem; } }
