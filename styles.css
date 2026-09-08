@@ -26,9 +26,9 @@
   --shadow-card: 0 18px 40px rgba(26, 13, 12, 0.16);
   --shadow-gold: 0 8px 24px rgba(212, 175, 55, 0.35);
 
-  --radius-lg: 28px;
-  --radius-md: 18px;
-  --radius-sm: 10px;
+  --radius-lg: 8px;
+  --radius-md: 8px;
+  --radius-sm: 6px;
 }
 
 * { margin: 0; padding: 0; box-sizing: border-box; }
@@ -274,9 +274,13 @@ h1, h2, h3, h4 { font-family: var(--font-display); font-weight: 700; color: var(
   border-radius: var(--radius-lg);
   overflow: hidden;
   box-shadow: var(--shadow-card);
-  aspect-ratio: 4/5;
+  aspect-ratio: 3/4;
 }
-.hero__image-frame img { width: 100%; height: 100%; object-fit: cover; }
+.hero__image-frame img { width: 100%; height: 100%; object-fit: cover; object-position: center; }
+.image-caption { color: rgba(251,244,230,0.7); font-size: 0.78rem; margin-top: 10px; text-align: center; }
+.hero__benefits { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 10px 20px; max-width: 520px; }
+.hero__benefits span { color: var(--cream-200); font-size: 0.88rem; padding-left: 18px; position: relative; }
+.hero__benefits span::before { content: "✓"; color: var(--gold-400); position: absolute; left: 0; }
 .hero__badge {
   position: absolute; bottom: -24px; left: -24px;
   background: var(--cream-100);
@@ -449,6 +453,8 @@ h1, h2, h3, h4 { font-family: var(--font-display); font-weight: 700; color: var(
   box-shadow: var(--shadow-soft);
 }
 .gallery__grid img:hover { transform: scale(1.04); box-shadow: var(--shadow-card); }
+.gallery__grid figure { margin: 0; }
+.gallery__grid figcaption { color: var(--ink-700); font-size: 0.8rem; margin-top: 8px; }
 
 /* ===== TESTIMONIALS ===== */
 .testimonials { padding: 90px 0; background: var(--maroon-950); position: relative; overflow: hidden; }
@@ -553,6 +559,14 @@ h1, h2, h3, h4 { font-family: var(--font-display); font-weight: 700; color: var(
   outline: none; border-color: var(--gold-500); box-shadow: 0 0 0 3px rgba(212,175,55,0.2);
 }
 .booking__privacy { text-align: center; font-size: 0.8rem; color: var(--ink-700); margin-top: 14px; }
+.booking__notice { border-left: 3px solid var(--gold-400); padding-left: 14px; }
+
+/* ===== UTILITIES ===== */
+.utilities { padding: 80px 0; background: var(--cream-100); }
+.utilities__grid { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 24px; max-width: 900px; margin: 36px auto 0; }
+.utility { background: var(--white); border: 1px solid rgba(189,143,47,0.3); border-radius: var(--radius-md); padding: 30px; box-shadow: var(--shadow-soft); }
+.utility h3 { margin-bottom: 10px; }
+.utility p { color: var(--ink-700); margin-bottom: 22px; }
 
 /* ===== FINAL CTA ===== */
 .final-cta {
@@ -561,6 +575,7 @@ h1, h2, h3, h4 { font-family: var(--font-display); font-weight: 700; color: var(
   background: linear-gradient(135deg, var(--gold-400), var(--gold-600));
 }
 .final-cta h2 { font-size: clamp(1.6rem, 3vw, 2.2rem); margin-bottom: 18px; }
+.final-cta p { color: var(--maroon-800); margin: 0 auto 26px; max-width: 720px; }
 .final-cta blockquote { font-style: italic; color: var(--maroon-800); font-size: 1.05rem; margin-bottom: 28px; }
 
 /* ===== FOOTER ===== */
@@ -593,11 +608,11 @@ h1, h2, h3, h4 { font-family: var(--font-display); font-weight: 700; color: var(
    =================================================================== */
 @media (max-width: 1024px) {
   .hero__inner { grid-template-columns: 1fr; text-align: center; }
-  .hero__text { order: 1; }
+  .hero__text { order: 0; }
   .hero__text p, .hero__cta, .hero__stats { margin-left: auto; margin-right: auto; }
   .hero__cta { justify-content: center; }
   .hero__stats { grid-template-columns: repeat(2, auto); justify-content: center; }
-  .hero__image { order: 0; max-width: 420px; margin: 0 auto; }
+  .hero__image { order: 1; max-width: 420px; margin: 0 auto; }
   .usp__grid, .services__grid, .pricing__grid, .gallery__grid { grid-template-columns: repeat(2, 1fr); }
   .about__inner, .booking__inner { grid-template-columns: 1fr; }
   .about__media { margin-bottom: 40px; max-width: 420px; }
@@ -635,6 +650,8 @@ h1, h2, h3, h4 { font-family: var(--font-display); font-weight: 700; color: var(
   .process__steps { grid-template-columns: 1fr 1fr; }
   .footer__inner { grid-template-columns: 1fr 1fr; }
   .form-row { grid-template-columns: 1fr; }
+  .utilities__grid { grid-template-columns: 1fr; }
+  .hero__benefits { margin-left: auto; margin-right: auto; text-align: left; }
 }
 
 @media (max-width: 520px) {
@@ -646,4 +663,6 @@ h1, h2, h3, h4 { font-family: var(--font-display); font-weight: 700; color: var(
   .hero__stats { grid-template-columns: repeat(2, 1fr); }
   .booking__form { padding: 26px; }
   .float-btn--call span:not(svg) { display: none; }
+  .hero__benefits { grid-template-columns: 1fr; }
+  .hero__cta .btn { width: 100%; }
 }

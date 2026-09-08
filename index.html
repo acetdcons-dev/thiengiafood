@@ -1,571 +1,191 @@
 <!DOCTYPE html>
 <html lang="vi">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Thiên Gia Food — Đặt Tiệc Tại Nhà Sang Trọng Số 1 TP.HCM</title>
-<meta name="description" content="Thiên Gia Food — Dịch vụ đặt tiệc tại nhà cao cấp TP.HCM. Trọn gói món ngon, bàn ghế, nhân sự phục vụ, dọn dẹp. Đặt tiệc dễ dàng, nhanh chóng — đội ngũ đầu bếp chuyên nghiệp nhiều năm kinh nghiệm.">
-<link rel="icon" href="data:,">
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@500;600;700;800;900&family=Be+Vietnam+Pro:wght@400;500;600;700;800&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="styles.css">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Thiên Gia Food | Tiệc tại nhà chỉn chu, chủ nhà thảnh thơi</title>
+  <meta name="description" content="Thiên Gia Food đồng hành cùng gia đình trong các buổi tiệc tại nhà, từ chọn món, chuẩn bị bàn ghế, phục vụ đến thu dọn.">
+  <meta property="og:type" content="website">
+  <meta property="og:locale" content="vi_VN">
+  <meta property="og:site_name" content="Thiên Gia Food">
+  <meta property="og:title" content="Thiên Gia Food | Tiệc tại nhà chỉn chu">
+  <meta property="og:description" content="Từ chọn món, chuẩn bị bàn ghế, phục vụ đến thu dọn - Thiên Gia Food lo trọn gói.">
+  <link rel="icon" type="image/svg+xml" href="assets/favicon.svg">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@500;600;700;800&family=Be+Vietnam+Pro:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css">
 </head>
 <body>
-
-<!-- ===== NÚT NỔI: GỌI / ZALO / LÊN ĐẦU TRANG ===== -->
-<div class="float-actions">
-  <a href="tel:0909123456" class="float-btn float-btn--call" aria-label="Gọi ngay">
-    <svg viewBox="0 0 24 24" fill="currentColor"><path d="M6.6 10.8c1.4 2.8 3.8 5.2 6.6 6.6l2.2-2.2c.3-.3.7-.4 1-.2 1.2.5 2.5.8 3.8.8.6 0 1 .4 1 1V20.7c0 .6-.4 1-1 1C10.6 21.7 2.3 13.4 2.3 3.5c0-.6.4-1 1-1H6.5c.6 0 1 .4 1 1 0 1.3.3 2.6.8 3.8.1.4 0 .8-.2 1l-2.2 2.5z"/></svg>
-    <span>Gọi ngay</span>
-  </a>
-  <a href="https://zalo.me/0909123456" target="_blank" rel="noopener" class="float-btn float-btn--zalo" aria-label="Chat Zalo">
-    <span class="float-btn__txt">Zalo</span>
-  </a>
-  <button class="float-btn float-btn--top" id="backToTop" aria-label="Lên đầu trang">
-    <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 5l7 7-1.4 1.4L13 8.8V19h-2V8.8l-4.6 4.6L5 12z"/></svg>
-  </button>
-</div>
-
-<!-- ===== HEADER ===== -->
-<header class="header" id="header">
-  <div class="container header__inner">
-    <a href="#top" class="logo">
-      <span class="logo__mark" aria-hidden="true">
-        <svg viewBox="0 0 100 100" fill="currentColor">
-          <circle cx="32" cy="40" r="15"/>
-          <circle cx="50" cy="26" r="19"/>
-          <circle cx="68" cy="40" r="15"/>
-          <rect x="27" y="44" width="46" height="18" rx="9"/>
-          <rect x="25" y="60" width="50" height="17" rx="5"/>
-          <rect x="19" y="81" width="62" height="6" rx="3"/>
-        </svg>
-      </span>
-      <span class="logo__text">Thiên Gia <em>Food</em></span>
-    </a>
-    <nav class="nav" id="nav">
-      <a href="#dich-vu">Dịch Vụ</a>
-      <a href="#menu">Menu Tiệc</a>
-      <a href="#quy-trinh">Quy Trình</a>
-      <a href="#gia">Bảng Giá</a>
-      <a href="#danh-gia">Đánh Giá</a>
-      <a href="#faq">FAQ</a>
-      <div class="nav__dropdown" id="navDropdown">
-        <button type="button" class="nav__dropdown-toggle" id="navDropdownToggle">Tiện Ích <span class="nav__caret" aria-hidden="true">▾</span></button>
-        <div class="nav__dropdown-menu">
-          <a href="thiep-moi.html">🎉 Thiệp Mời Online</a>
-          <a href="ghep-anh-cuoi.html">✨ Ghép Ảnh Cưới AI</a>
-        </div>
-      </div>
-      <a href="#dat-tiec" class="nav__cta btn btn--primary">Đặt Tiệc Ngay</a>
-    </nav>
-    <div class="header__actions">
-      <a href="tel:0909123456" class="btn btn--ghost">📞 0909 123 456</a>
-      <a href="#dat-tiec" class="btn btn--primary">Đặt Tiệc Ngay</a>
-    </div>
-    <button class="burger" id="burger" aria-label="Mở menu"><span></span><span></span><span></span></button>
+  <div class="float-actions">
+    <button class="float-btn float-btn--top" id="backToTop" aria-label="Lên đầu trang" title="Lên đầu trang">↑</button>
   </div>
-</header>
 
-<main id="top">
-
-  <!-- ===== HERO ===== -->
-  <section class="hero">
-    <div class="hero__bg" aria-hidden="true"></div>
-    <div class="hero__pattern" aria-hidden="true"></div>
-    <div class="container hero__inner">
-      <div class="hero__text">
-        <span class="eyebrow">★ ĐẶT TIỆC TẠI NHÀ CHUẨN 5 SAO ★</span>
-        <h1>Mâm Tiệc <span class="highlight">Sang Trọng</span><br>Ngay Tại Nhà Bạn</h1>
-        <p class="hero__subtitle">Thiên Gia Food mang cả một nhà hàng đến tận cửa nhà bạn — từ 1 bàn đến vài trăm bàn, trọn gói món ngon, bàn ghế, nhân sự phục vụ và dọn dẹp. Đặt tiệc dễ dàng, nhanh chóng.</p>
-        <div class="hero__cta">
-          <a href="#dat-tiec" class="btn btn--primary btn--lg">Đặt Tiệc Ngay</a>
-          <a href="#menu" class="btn btn--outline btn--lg">Xem Menu Tiệc</a>
-        </div>
-        <div class="hero__stats">
-          <div class="hero__stat"><strong class="counter" data-target="5">0</strong><span>Năm kinh nghiệm</span></div>
-          <div class="hero__stat"><strong class="counter" data-target="3200">0</strong><span>Tiệc đã phục vụ</span></div>
-          <div class="hero__stat"><strong class="counter" data-target="320">0</strong><span>Món trong menu</span></div>
-          <div class="hero__stat"><strong>4.9<span style="font-size:.6em">/5</span></strong><span>★★★★★ Đánh giá khách hàng</span></div>
-        </div>
-      </div>
-      <div class="hero__image">
-        <div class="hero__image-frame">
-          <img src="assets/img/hero-mam-tiec.jpg" alt="Mâm cỗ Việt Nam thịnh soạn nhìn từ trên xuống" loading="lazy">
-        </div>
-        <div class="hero__badge">
-          <span class="hero__badge-num">100%</span>
-          <span>Tươi ngon &amp; An toàn vệ sinh</span>
-        </div>
-      </div>
-    </div>
-    <div class="hero__divider" aria-hidden="true"></div>
-  </section>
-
-  <!-- ===== USP BAR ===== -->
-  <section class="usp">
-    <div class="container usp__grid">
-      <div class="usp__item">
-        <span class="usp__icon">⏱️</span>
-        <h3>Đặt Tiệc Dễ Dàng, Nhanh Chóng</h3>
-        <p>Chỉ vài bước liên hệ và chọn thực đơn — tiệc gấp hay tiệc lên kế hoạch trước đều được sắp xếp chu đáo, đúng hẹn.</p>
-      </div>
-      <div class="usp__item">
-        <span class="usp__icon">💰</span>
-        <h3>Giá Trọn Gói Minh Bạch</h3>
-        <p>Một giá duy nhất gồm món ăn, bàn ghế, chén đĩa, nhân sự, vận chuyển.</p>
-      </div>
-      <div class="usp__item">
-        <span class="usp__icon">👨‍🍳</span>
-        <h3>Đội Ngũ Đầu Bếp Chuyên Nghiệp, Có Nhiều Năm Kinh Nghiệm</h3>
-        <p>Từng đảm trách tiệc cưới, sự kiện cao cấp khắp Sài Gòn và các tỉnh lân cận, tay nghề vững, món nào cũng chuẩn vị.</p>
-      </div>
-      <div class="usp__item">
-        <span class="usp__icon">✨</span>
-        <h3>Phục Vụ Tận Tâm — Dọn Dẹp Sạch</h3>
-        <p>Setup, phục vụ tại bàn, thu dọn toàn bộ — bạn chỉ cần đãi khách.</p>
-      </div>
-    </div>
-  </section>
-
-  <!-- ===== GIỚI THIỆU ===== -->
-  <section class="about" id="gioi-thieu">
-    <div class="container about__inner">
-      <div class="about__media">
-        <img class="about__img about__img--1" src="assets/img/about-gia-dinh.jpg" alt="Gia đình Việt Nam sum họp trong ngày cưới" loading="lazy">
-        <img class="about__img about__img--2" src="assets/img/about-doan-ruoc.jpg" alt="Đoàn rước áo dài vàng trong tiệc cưới Việt Nam" loading="lazy">
-        <div class="about__seal">5 Năm<br>Uy Tín</div>
-      </div>
-      <div class="about__content">
-        <span class="section-label">Về Thiên Gia Food</span>
-        <h2 class="section-title section-title--left">Người Sài Gòn Tin Chọn Cho Mọi Bữa Tiệc Gia Đình</h2>
-        <p>Gần 5 năm phục vụ ẩm thực tiệc tận nhà tại TP.HCM, Bình Dương, Bà Rịa – Vũng Tàu, Tây Ninh, Long An... và các tỉnh lân cận, Thiên Gia Food hiểu rằng một bữa tiệc ngon không chỉ là món ăn — mà là cảm giác được chăm chút từ A đến Z. Chúng tôi mang đến trải nghiệm như một nhà hàng cao cấp, ngay trong không gian quen thuộc của gia đình bạn.</p>
-        <ul class="about__list">
-          <li>✔ Nguyên liệu tươi nhập mỗi ngày, kiểm soát an toàn vệ sinh nghiêm ngặt</li>
-          <li>✔ Phục vụ khắp các quận TP.HCM &amp; vùng ven, có mặt trong 60–120 phút</li>
-          <li>✔ Linh hoạt từ 1 bàn gia đình đến vài trăm bàn tiệc lớn</li>
-          <li>✔ Hỗ trợ tư vấn thực đơn 24/7 qua điện thoại &amp; Zalo</li>
-        </ul>
-        <a href="#dat-tiec" class="btn btn--primary">Nhận Tư Vấn Miễn Phí</a>
-      </div>
-    </div>
-  </section>
-
-  <!-- ===== DỊCH VỤ ===== -->
-  <section class="services" id="dich-vu">
-    <div class="container">
-      <span class="section-label section-label--center">Dịch Vụ Tiệc</span>
-      <h2 class="section-title section-title--center">Mọi Dịp Đặc Biệt, Đều Có Thiên Gia Food</h2>
-      <p class="section-subtitle">Chọn đúng dịp của bạn — chúng tôi gợi ý thực đơn và set bàn phù hợp nhất.</p>
-      <div class="services__grid">
-        <article class="service-card">
-          <div class="service-card__img"><img src="assets/img/gallery-mam-com.jpg" alt="Bàn tiệc gia đình đầy đủ món như tiệc cưới Việt Nam" loading="lazy"></div>
-          <h3>Tiệc Gia Đình &amp; Họp Mặt</h3>
-          <p>Mâm cỗ ấm cúng, đủ chất, đúng vị nhà — gắn kết những bữa cơm sum họp.</p>
-        </article>
-        <article class="service-card">
-          <div class="service-card__img"><img src="assets/img/dichvu-sinh-nhat.jpg" alt="Bé gái Việt Nam vui mừng sinh nhật" loading="lazy"></div>
-          <h3>Sinh Nhật &amp; Kỷ Niệm</h3>
-          <p>Thực đơn vui tươi, trang trí bắt mắt, ghi điểm với mọi lứa tuổi khách mời.</p>
-        </article>
-        <article class="service-card">
-          <div class="service-card__img"><img src="assets/img/dichvu-tan-gia.jpg" alt="Múa lân và câu đối chúc mừng tân gia, khai trương may mắn" loading="lazy"></div>
-          <h3>Tân Gia &amp; Khai Trương</h3>
-          <p>Mâm tiệc tươm tất, mang may mắn — khởi đầu mới thật trọn vẹn.</p>
-        </article>
-        <article class="service-card">
-          <div class="service-card__img"><img src="assets/img/dichvu-cuoi-hoi.jpg" alt="Rạp cưới dựng tại nhà với cô dâu chú rể Việt Nam" loading="lazy"></div>
-          <h3>Cưới Hỏi Tại Nhà</h3>
-          <p>Dựng rạp, lo trọn thực đơn truyền thống đầy đủ lễ nghi, trang trọng cho ngày trọng đại.</p>
-        </article>
-        <article class="service-card">
-          <div class="service-card__img"><img src="assets/img/dichvu-le-truyen-thong.jpg" alt="Mâm cúng giỗ truyền thống với hoa quả, hương đèn đầy đủ lễ nghi" loading="lazy"></div>
-          <h3>Giỗ, Cúng &amp; Lễ Truyền Thống</h3>
-          <p>Mâm cúng chuẩn phong tục, bài bản từng món theo từng vùng miền.</p>
-        </article>
-        <article class="service-card">
-          <div class="service-card__img"><img src="assets/img/dichvu-buffet.jpg" alt="Buffet tiệc công ty trang trọng với nhiều món ăn phục vụ theo khay" loading="lazy"></div>
-          <h3>Buffet &amp; Tiệc Công Ty</h3>
-          <p>Thực đơn buffet đa dạng, phục vụ chuyên nghiệp cho sự kiện đông người.</p>
-        </article>
-      </div>
-    </div>
-  </section>
-
-  <!-- ===== MENU TIỆC ===== -->
-  <section class="menu" id="menu">
-    <div class="container">
-      <span class="section-label section-label--center">Thực Đơn Đề Xuất</span>
-      <h2 class="section-title section-title--center">320+ Món Ngon — Chọn Set Hợp Túi Tiền</h2>
-      <p class="section-subtitle">Mỗi set là gợi ý, có thể tùy chỉnh món theo sở thích &amp; số lượng khách.</p>
-
-      <div class="menu__tabs" id="menuTabs" role="tablist">
-        <button class="menu__tab is-active" data-tab="set-a" role="tab">Set Á Truyền Thống</button>
-        <button class="menu__tab" data-tab="set-bbq" role="tab">Set BBQ &amp; Hải Sản</button>
-        <button class="menu__tab" data-tab="set-chay" role="tab">Set Chay Tịnh</button>
-        <button class="menu__tab" data-tab="set-buffet" role="tab">Buffet Tự Chọn</button>
-      </div>
-
-      <div class="menu__panels">
-        <div class="menu__panel is-active" id="set-a">
-          <div class="menu__dishes">
-            <div class="dish"><img src="assets/img/dish-bun-gio-heo.jpg" alt="Bún giò heo rau thơm" loading="lazy"><div><h4>Bún Giò Heo Rau Thơm</h4><span>85.000đ/phần</span></div></div>
-            <div class="dish"><img src="assets/img/dish-ga-xe-phay.jpg" alt="Gà luộc xé phay trộn rau bắp cải" loading="lazy"><div><h4>Gà Luộc Xé Phay</h4><span>95.000đ/phần</span></div></div>
-            <div class="dish"><img src="assets/img/dish-long-heo.jpg" alt="Lòng heo luộc chấm mắm tôm" loading="lazy"><div><h4>Lòng Heo Luộc Mắm Tôm</h4><span>110.000đ/phần</span></div></div>
-            <div class="dish"><img src="assets/img/dish-lau-oc.jpg" alt="Lẩu ốc chuối đậu" loading="lazy"><div><h4>Lẩu Ốc Chuối Đậu</h4><span>250.000đ/nồi</span></div></div>
-          </div>
-          <div class="menu__total">Set 6 món / bàn 10 khách — chỉ từ <strong>1.890.000đ</strong></div>
-        </div>
-        <div class="menu__panel" id="set-bbq">
-          <div class="menu__dishes">
-            <div class="dish"><img src="https://images.unsplash.com/photo-1529193591184-b1d58069ecdd?auto=format&fit=crop&w=400&q=80" alt="BBQ thịt nướng" loading="lazy"><div><h4>Set Nướng BBQ Thập Cẩm</h4><span>180.000đ/phần</span></div></div>
-            <div class="dish"><img src="https://images.unsplash.com/photo-1565299624946-b28f40a0ae38?auto=format&fit=crop&w=400&q=80" alt="Sườn nướng" loading="lazy"><div><h4>Sườn Heo Nướng Mật Ong</h4><span>150.000đ/phần</span></div></div>
-            <div class="dish"><img src="assets/img/dish-hai-san-nuong.jpg" alt="Hải sản nướng thập cẩm kiểu Việt" loading="lazy"><div><h4>Hải Sản Nướng Thập Cẩm</h4><span>220.000đ/phần</span></div></div>
-            <div class="dish"><img src="https://images.unsplash.com/photo-1565299507177-b0ac66763828?auto=format&fit=crop&w=400&q=80" alt="Mực nướng sa tế" loading="lazy"><div><h4>Mực Nướng Sa Tế</h4><span>165.000đ/phần</span></div></div>
-          </div>
-          <div class="menu__total">Set 6 món / bàn 10 khách — chỉ từ <strong>2.290.000đ</strong></div>
-        </div>
-        <div class="menu__panel" id="set-chay">
-          <div class="menu__dishes">
-            <div class="dish"><img src="https://images.unsplash.com/photo-1512621776951-a57141f2eefd?auto=format&fit=crop&w=400&q=80" alt="Đậu hũ chiên sả" loading="lazy"><div><h4>Đậu Hũ Chiên Sả Ớt</h4><span>65.000đ/phần</span></div></div>
-            <div class="dish"><img src="https://images.unsplash.com/photo-1540420773420-3366772f4999?auto=format&fit=crop&w=400&q=80" alt="Nấm xào thập cẩm" loading="lazy"><div><h4>Nấm Xào Thập Cẩm</h4><span>95.000đ/phần</span></div></div>
-            <div class="dish"><img src="https://images.unsplash.com/photo-1546069901-ba9599a7e63c?auto=format&fit=crop&w=400&q=80" alt="Gỏi cuốn chay" loading="lazy"><div><h4>Gỏi Cuốn Chay</h4><span>70.000đ/phần</span></div></div>
-            <div class="dish"><img src="https://images.unsplash.com/photo-1455619452474-d2be8b1e70cd?auto=format&fit=crop&w=400&q=80" alt="Lẩu chay nấm" loading="lazy"><div><h4>Lẩu Chay Nấm Thảo Mộc</h4><span>220.000đ/nồi</span></div></div>
-          </div>
-          <div class="menu__total">Set 6 món / bàn 10 khách — chỉ từ <strong>1.590.000đ</strong></div>
-        </div>
-        <div class="menu__panel" id="set-buffet">
-          <div class="menu__dishes">
-            <div class="dish"><img src="assets/img/dish-buffet-da-dang.jpg" alt="Buffet nhiều món Việt đa dạng" loading="lazy"><div><h4>Buffet 20 Món Việt Đa Dạng</h4><span>189.000đ/khách</span></div></div>
-            <div class="dish"><img src="assets/img/dish-banh-xeo-goi-cuon.jpg" alt="Quầy bánh xèo và gỏi cuốn" loading="lazy"><div><h4>Quầy Bánh Xèo &amp; Gỏi Cuốn</h4><span>+39.000đ/khách</span></div></div>
-            <div class="dish"><img src="https://images.unsplash.com/photo-1414235077428-338989a2e8c0?auto=format&fit=crop&w=400&q=80" alt="Quầy tráng miệng" loading="lazy"><div><h4>Quầy Tráng Miệng &amp; Trái Cây</h4><span>+25.000đ/khách</span></div></div>
-            <div class="dish"><img src="https://images.unsplash.com/photo-1551782450-a2132b4ba21d?auto=format&fit=crop&w=400&q=80" alt="Đồ uống tự chọn" loading="lazy"><div><h4>Nước Ngọt &amp; Trà Đào Tự Chọn</h4><span>+20.000đ/khách</span></div></div>
-          </div>
-          <div class="menu__total">Tối thiểu 20 khách — chỉ từ <strong>189.000đ/khách</strong></div>
-        </div>
-      </div>
-      <div class="menu__cta"><a href="#dat-tiec" class="btn btn--primary">Tư Vấn Thực Đơn Riêng Cho Tôi</a></div>
-    </div>
-  </section>
-
-  <!-- ===== QUY TRÌNH ===== -->
-  <section class="process" id="quy-trinh">
-    <div class="container">
-      <span class="section-label section-label--center">Quy Trình Đặt Tiệc</span>
-      <h2 class="section-title section-title--center">Chỉ 5 Bước — Có Ngay Bữa Tiệc Hoàn Hảo</h2>
-      <div class="process__steps">
-        <div class="process__step">
-          <span class="process__num">01</span>
-          <h3>Liên Hệ Tư Vấn</h3>
-          <p>Gọi điện hoặc chat Zalo, cho biết số khách &amp; dịp tiệc.</p>
-        </div>
-        <div class="process__step">
-          <span class="process__num">02</span>
-          <h3>Chọn Thực Đơn</h3>
-          <p>Nhận gợi ý set món phù hợp ngân sách, tùy chỉnh theo ý bạn.</p>
-        </div>
-        <div class="process__step">
-          <span class="process__num">03</span>
-          <h3>Xác Nhận &amp; Đặt Cọc</h3>
-          <p>Chốt đơn nhanh gọn, đặt cọc linh hoạt, giữ lịch ưu tiên.</p>
-        </div>
-        <div class="process__step">
-          <span class="process__num">04</span>
-          <h3>Setup Tại Nhà</h3>
-          <p>Đội ngũ mang bàn ghế, chén đĩa, bày tiệc trước giờ hẹn.</p>
-        </div>
-        <div class="process__step">
-          <span class="process__num">05</span>
-          <h3>Phục Vụ &amp; Dọn Dẹp</h3>
-          <p>Phục vụ tận bàn trong suốt buổi tiệc, thu dọn sạch sẽ khi xong.</p>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- ===== GALLERY ===== -->
-  <section class="gallery" id="gallery">
-    <div class="container">
-      <span class="section-label section-label--center">Khoảnh Khắc Tiệc</span>
-      <h2 class="section-title section-title--center">Những Bữa Tiệc Đã Đồng Hành Cùng Khách Hàng</h2>
-      <div class="gallery__grid">
-        <img src="assets/img/gallery-mam-com.jpg" alt="Mâm cơm tiệc ngoài trời nhiều món Việt" loading="lazy">
-        <img src="assets/img/gallery-co-dau-chu-re.jpg" alt="Cô dâu chú rể Việt Nam hạnh phúc ngày cưới" loading="lazy">
-        <img src="assets/img/gallery-lau-oc.jpg" alt="Lẩu ốc nóng hổi cho tiệc tại nhà" loading="lazy">
-        <img src="assets/img/gallery-ao-dai-do.jpg" alt="Cô dâu chú rể áo dài đỏ rước dâu" loading="lazy">
-        <img src="assets/img/gallery-via-he.jpg" alt="Bếp dã chiến phục vụ tiệc tại nhà" loading="lazy">
-        <img src="assets/img/gallery-quan-an.jpg" alt="Mâm món Việt bốc khói thơm ngon" loading="lazy">
-      </div>
-    </div>
-  </section>
-
-  <!-- ===== ĐÁNH GIÁ KHÁCH HÀNG ===== -->
-  <section class="testimonials" id="danh-gia">
-    <div class="container">
-      <span class="section-label section-label--center">Khách Hàng Nói Gì</span>
-      <h2 class="section-title section-title--center">Hơn 3.200 Bữa Tiệc Được Tin Tưởng</h2>
-      <div class="testimonials__track" id="testiTrack">
-        <div class="testimonial">
-          <div class="stars">★★★★★</div>
-          <p>"Đặt tiệc sinh nhật cho con gấp trong buổi sáng mà 4 giờ sau đã có mâm đầy đủ, món nào cũng nóng sốt ngon miệng. Nhân viên dọn dẹp sạch sẽ luôn."</p>
-          <div class="testimonial__person"><strong>Chị Thanh Hà</strong><span>Quận 7, TP.HCM</span></div>
-        </div>
-        <div class="testimonial">
-          <div class="stars">★★★★★</div>
-          <p>"Tiệc tân gia 12 bàn mà tổ chức mượt như nhà hàng 5 sao, khách ai cũng khen món ngon trình bày đẹp. Giá lại rất hợp lý so với chất lượng."</p>
-          <div class="testimonial__person"><strong>Anh Quốc Huy</strong><span>Thủ Đức, TP.HCM</span></div>
-        </div>
-        <div class="testimonial">
-          <div class="stars">★★★★★</div>
-          <p>"Mâm cúng giỗ đúng phong tục miền Nam, đầy đủ lễ nghi, đặt món chay cũng rất ngon. Sẽ tiếp tục đặt cho các dịp sau."</p>
-          <div class="testimonial__person"><strong>Bác Minh Tâm</strong><span>Gò Vấp, TP.HCM</span></div>
-        </div>
-        <div class="testimonial">
-          <div class="stars">★★★★★</div>
-          <p>"Buffet công ty cho hơn 80 người, phục vụ chuyên nghiệp, món đa dạng đủ Á Âu. Đội ngũ rất nhiệt tình hỗ trợ tận nơi."</p>
-          <div class="testimonial__person"><strong>Anh Đăng Khoa</strong><span>Quận 1, TP.HCM</span></div>
-        </div>
-      </div>
-      <div class="testimonials__nav">
-        <button id="testiPrev" aria-label="Trước">‹</button>
-        <button id="testiNext" aria-label="Sau">›</button>
-      </div>
-    </div>
-  </section>
-
-  <!-- ===== BẢNG GIÁ ===== -->
-  <section class="pricing" id="gia">
-    <div class="container">
-      <span class="section-label section-label--center">Bảng Giá Trọn Gói</span>
-      <h2 class="section-title section-title--center">Chọn Gói Tiệc Phù Hợp Với Bạn</h2>
-      <p class="section-subtitle">Giá đã gồm bàn ghế, chén đĩa, nhân sự phục vụ &amp; vận chuyển nội thành.</p>
-      <div class="pricing__grid">
-        <div class="pricing__card">
-          <h3>Tiêu Chuẩn</h3>
-          <p class="pricing__desc">Phù hợp tiệc gia đình thân mật</p>
-          <div class="pricing__price">1.890.000đ<span>/bàn 10 khách</span></div>
-          <ul class="pricing__features">
-            <li>✔ 6 món chính theo set</li>
-            <li>✔ Bàn ghế, chén đĩa cơ bản</li>
-            <li>✔ 1 nhân viên phục vụ/3 bàn</li>
-            <li>✔ Dọn dẹp sau tiệc</li>
-          </ul>
-          <a href="#dat-tiec" class="btn btn--outline btn--block">Chọn Gói Này</a>
-        </div>
-        <div class="pricing__card pricing__card--featured">
-          <span class="pricing__badge">Phổ Biến Nhất</span>
-          <h3>VIP</h3>
-          <p class="pricing__desc">Lựa chọn yêu thích cho tiệc tân gia, sinh nhật</p>
-          <div class="pricing__price">2.690.000đ<span>/bàn 10 khách</span></div>
-          <ul class="pricing__features">
-            <li>✔ 8 món chính + 1 món tráng miệng</li>
-            <li>✔ Bàn ghế, chén đĩa cao cấp</li>
-            <li>✔ 1 nhân viên phục vụ/2 bàn</li>
-            <li>✔ Trang trí bàn tiệc cơ bản</li>
-            <li>✔ Dọn dẹp &amp; vệ sinh toàn bộ</li>
-          </ul>
-          <a href="#dat-tiec" class="btn btn--primary btn--block">Chọn Gói Này</a>
-        </div>
-        <div class="pricing__card">
-          <h3>Super VIP</h3>
-          <p class="pricing__desc">Đẳng cấp cho tiệc cưới, sự kiện lớn</p>
-          <div class="pricing__price">3.890.000đ<span>/bàn 10 khách</span></div>
-          <ul class="pricing__features">
-            <li>✔ 10 món chính theo yêu cầu riêng</li>
-            <li>✔ Bàn ghế, chén đĩa, khăn trải cao cấp</li>
-            <li>✔ 1 nhân viên phục vụ/bàn</li>
-            <li>✔ Trang trí chủ đề theo yêu cầu</li>
-            <li>✔ Quản lý sự kiện riêng tại tiệc</li>
-          </ul>
-          <a href="#dat-tiec" class="btn btn--outline btn--block">Chọn Gói Này</a>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- ===== FAQ ===== -->
-  <section class="faq" id="faq">
-    <div class="container">
-      <span class="section-label section-label--center">Giải Đáp Thắc Mắc</span>
-      <h2 class="section-title section-title--center">Câu Hỏi Thường Gặp</h2>
-      <div class="faq__list" id="faqList">
-        <div class="faq__item">
-          <button class="faq__question">Đặt tiệc trước bao lâu thì kịp? <span>+</span></button>
-          <div class="faq__answer"><p>Chỉ cần báo trước tối thiểu 4 giờ với tiệc dưới 5 bàn. Với tiệc lớn trên 20 bàn, nên đặt trước 1–2 ngày để chuẩn bị tốt nhất.</p></div>
-        </div>
-        <div class="faq__item">
-          <button class="faq__question">Khu vực phục vụ của Thiên Gia Food ở đâu? <span>+</span></button>
-          <div class="faq__answer"><p>Phục vụ toàn bộ các quận nội thành TP.HCM (Quận 1–12, Bình Thạnh, Phú Nhuận, Tân Bình, Gò Vấp...) và vùng ven như Thủ Đức, Bình Tân, Nhà Bè, Hóc Môn.</p></div>
-        </div>
-        <div class="faq__item">
-          <button class="faq__question">Tôi có thể đặt số lượng ít, chỉ 1–2 mâm không? <span>+</span></button>
-          <div class="faq__answer"><p>Hoàn toàn được. Thiên Gia Food nhận từ 1 bàn gia đình đến vài trăm bàn tiệc lớn, vẫn đảm bảo phục vụ tận tâm và đúng giờ.</p></div>
-        </div>
-        <div class="faq__item">
-          <button class="faq__question">Có cần đặt cọc trước không? <span>+</span></button>
-          <div class="faq__answer"><p>Với đơn nhỏ không cần đặt cọc. Với tiệc từ 10 bàn trở lên, đặt cọc 30% để giữ lịch và nguyên liệu tươi cho ngày tiệc.</p></div>
-        </div>
-        <div class="faq__item">
-          <button class="faq__question">Thực đơn có thể tùy chỉnh theo ý tôi không? <span>+</span></button>
-          <div class="faq__answer"><p>Có. Mỗi set chỉ là gợi ý — bạn có thể thay đổi từng món trong hơn 320 món của Thiên Gia Food để hợp khẩu vị và ngân sách.</p></div>
-        </div>
-        <div class="faq__item">
-          <button class="faq__question">Nếu không hài lòng về món ăn thì sao? <span>+</span></button>
-          <div class="faq__answer"><p>Chúng tôi cam kết hoàn hoặc đổi món miễn phí ngay tại tiệc nếu món ăn không đạt chất lượng như cam kết ban đầu.</p></div>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- ===== THIỆP MỜI TEASER ===== -->
-  <section class="invite-teaser">
-    <div class="container invite-teaser__inner">
-      <div class="invite-teaser__text">
-        <span class="section-label">Miễn Phí Cho Mọi Khách Ghé Web</span>
-        <h2 class="section-title section-title--left">Tạo Thiệp Mời Online Trong 1 Phút</h2>
-        <p>Đám cưới, ăn hỏi, thôi nôi, sinh nhật, tân gia, khai trương — chọn mẫu đẹp, điền thông tin là có ngay link thiệp để gửi Zalo, Messenger cho khách mời, hoặc tải ảnh về máy.</p>
-        <a href="thiep-moi.html" class="btn btn--primary btn--lg">🎉 Tạo Thiệp Ngay — Miễn Phí</a>
-      </div>
-      <div class="invite-teaser__cards" aria-hidden="true">
-        <div class="invite-teaser__card invite-teaser__card--1"></div>
-        <div class="invite-teaser__card invite-teaser__card--2"></div>
-      </div>
-    </div>
-  </section>
-
-  <!-- ===== GHÉP ẢNH CƯỚI AI TEASER ===== -->
-  <section class="wai-teaser">
-    <div class="container wai-teaser__inner">
-      <div class="wai-teaser__visual" aria-hidden="true">
-        <div class="wai-teaser__frame wai-teaser__frame--1"></div>
-        <div class="wai-teaser__frame wai-teaser__frame--2"></div>
-        <span class="wai-teaser__spark">✨</span>
-      </div>
-      <div class="wai-teaser__text">
-        <span class="section-label">Miễn Phí — Thử Ngay</span>
-        <h2 class="section-title section-title--left">Ghép Ảnh Cưới Bằng AI</h2>
-        <p>Tải ảnh cô dâu, chú rể lên, chọn phong cách hoặc mô tả ý tưởng riêng — AI sẽ thiết kế ra một bức ảnh cưới nghệ thuật cho bạn, chỉ trong ít phút.</p>
-        <a href="ghep-anh-cuoi.html" class="btn btn--primary btn--lg">✨ Ghép Ảnh Ngay — Miễn Phí</a>
-      </div>
-    </div>
-  </section>
-
-  <!-- ===== ĐẶT TIỆC / LIÊN HỆ ===== -->
-  <section class="booking" id="dat-tiec">
-    <div class="container booking__inner">
-      <div class="booking__info">
-        <span class="section-label">Đặt Tiệc Ngay</span>
-        <h2 class="section-title section-title--left">Để Lại Thông Tin — Thiên Gia Food Gọi Lại Trong 5 Phút</h2>
-        <p>Hoặc liên hệ trực tiếp để được tư vấn nhanh nhất:</p>
-        <a href="tel:0909123456" class="booking__contact">📞 0909 123 456</a>
-        <a href="https://zalo.me/0909123456" target="_blank" rel="noopener" class="booking__contact">💬 Chat Zalo: 0909 123 456</a>
-        <p class="booking__address">📍 123 Đường Nguyễn Văn Linh, Quận 7, TP.HCM</p>
-        <p class="booking__hours">🕒 Tư vấn 24/7 — Phục vụ tận nhà khắp TP.HCM</p>
-      </div>
-      <form class="booking__form" id="bookingForm">
-        <div class="form-row">
-          <div class="form-group">
-            <label for="bkName">Họ tên</label>
-            <input type="text" id="bkName" name="name" required placeholder="Nguyễn Văn A">
-          </div>
-          <div class="form-group">
-            <label for="bkPhone">Số điện thoại</label>
-            <input type="tel" id="bkPhone" name="phone" required placeholder="09xx xxx xxx">
-          </div>
-        </div>
-        <div class="form-row">
-          <div class="form-group">
-            <label for="bkDate">Ngày đặt tiệc</label>
-            <input type="date" id="bkDate" name="date" required>
-          </div>
-          <div class="form-group">
-            <label for="bkGuests">Số bàn / khách</label>
-            <input type="number" id="bkGuests" name="guests" min="1" placeholder="Ví dụ: 5 bàn">
-          </div>
-        </div>
-        <div class="form-group">
-          <label for="bkArea">Khu vực Miền Nam</label>
-          <select id="bkArea" name="area">
-            <option>TP. Hồ Chí Minh</option>
-            <option>Bình Dương</option>
-            <option>Bà Rịa – Vũng Tàu</option>
-            <option>Bình Phước</option>
-            <option>Tây Ninh</option>
-            <option>Long An</option>
-            <option>Khu vực khác</option>
-          </select>
-        </div>
-        <div class="form-group">
-          <label for="bkNote">Ghi chú thực đơn (tuỳ chọn)</label>
-          <textarea id="bkNote" name="note" rows="3" placeholder="Ví dụ: tiệc sinh nhật, cần set chay, ngân sách dự kiến..."></textarea>
-        </div>
-        <button type="submit" class="btn btn--primary btn--block btn--lg">Gửi Yêu Cầu Đặt Tiệc</button>
-        <p class="booking__privacy">🔒 Thông tin của bạn được bảo mật, chỉ dùng để liên hệ tư vấn.</p>
-      </form>
-    </div>
-  </section>
-
-  <!-- ===== CTA CUỐI TRANG ===== -->
-  <section class="final-cta">
-    <div class="container">
-      <h2>Một Bữa Tiệc Đáng Nhớ Đang Chờ Gia Đình Bạn</h2>
-      <blockquote>"Đãi khách bằng cả tấm lòng — phần còn lại, để Thiên Gia Food lo."</blockquote>
-      <a href="tel:0909123456" class="btn btn--primary btn--lg">📞 Gọi Đặt Tiệc: 0909 123 456</a>
-    </div>
-  </section>
-
-</main>
-
-<!-- ===== FOOTER ===== -->
-<footer class="footer">
-  <div class="container footer__inner">
-    <div class="footer__col">
-      <a href="#top" class="logo logo--footer">
-        <span class="logo__mark" aria-hidden="true">
-          <svg viewBox="0 0 100 100" fill="currentColor">
-            <circle cx="32" cy="40" r="15"/>
-            <circle cx="50" cy="26" r="19"/>
-            <circle cx="68" cy="40" r="15"/>
-            <rect x="27" y="44" width="46" height="18" rx="9"/>
-            <rect x="25" y="60" width="50" height="17" rx="5"/>
-            <rect x="19" y="81" width="62" height="6" rx="3"/>
-          </svg>
-        </span>
+  <header class="header" id="header">
+    <div class="container header__inner">
+      <a href="#top" class="logo" aria-label="Thiên Gia Food - Trang chủ">
+        <span class="logo__mark" aria-hidden="true">TG</span>
         <span class="logo__text">Thiên Gia <em>Food</em></span>
       </a>
-      <p>Dịch vụ đặt tiệc tại nhà trọn gói, sang trọng &amp; tận tâm — đồng hành cùng mọi khoảnh khắc đáng nhớ của gia đình Sài Gòn.</p>
+      <nav class="nav" id="nav" aria-label="Điều hướng chính">
+        <a href="#loai-tiec">Loại Tiệc</a>
+        <a href="#menu">Menu</a>
+        <a href="#tiec-thuc-te">Hình Ảnh</a>
+        <a href="#quy-trinh">Quy Trình</a>
+        <a href="#faq">FAQ</a>
+        <div class="nav__dropdown" id="navDropdown">
+          <button type="button" class="nav__dropdown-toggle" id="navDropdownToggle" aria-expanded="false">Tiện Ích <span class="nav__caret" aria-hidden="true">▾</span></button>
+          <div class="nav__dropdown-menu">
+            <a href="thiep-moi.html">Thiệp Mời Online</a>
+            <a href="ghep-anh-cuoi.html">Ghép Ảnh Cưới AI</a>
+          </div>
+        </div>
+        <a href="#dat-tiec" class="nav__cta btn btn--primary">Nhận Menu &amp; Báo Giá</a>
+      </nav>
+      <div class="header__actions"><a href="#dat-tiec" class="btn btn--primary">Nhận Menu &amp; Báo Giá</a></div>
+      <button class="burger" id="burger" aria-label="Mở menu" aria-expanded="false"><span></span><span></span><span></span></button>
     </div>
-    <div class="footer__col">
-      <h4>Liên Hệ</h4>
-      <p>📍 123 Nguyễn Văn Linh, Quận 7, TP.HCM</p>
-      <p>📞 0909 123 456</p>
-      <p>✉️ lienhe@thiengiafood.vn</p>
-    </div>
-    <div class="footer__col">
-      <h4>Dịch Vụ</h4>
-      <p><a href="#dich-vu">Tiệc gia đình &amp; sinh nhật</a></p>
-      <p><a href="#dich-vu">Tiệc cưới hỏi &amp; giỗ cúng</a></p>
-      <p><a href="#menu">Buffet &amp; tiệc công ty</a></p>
-      <p><a href="thiep-moi.html">Thiệp mời online miễn phí</a></p>
-      <p><a href="ghep-anh-cuoi.html">Ghép ảnh cưới bằng AI</a></p>
-    </div>
-    <div class="footer__col">
-      <h4>Kết Nối</h4>
-      <div class="footer__social">
-        <a href="#" aria-label="Facebook">Facebook</a>
-        <a href="#" aria-label="Zalo">Zalo</a>
-        <a href="#" aria-label="Youtube">Youtube</a>
+  </header>
+
+  <main id="top">
+    <section class="hero">
+      <div class="hero__bg" aria-hidden="true"></div>
+      <div class="container hero__inner">
+        <div class="hero__text">
+          <span class="eyebrow">THIÊN GIA FOOD · TIỆC TẠI NHÀ</span>
+          <h1>Tiệc Tại Nhà Chỉn Chu — Chủ Nhà Thảnh Thơi Tiếp Khách</h1>
+          <p class="hero__subtitle">Từ chọn món, chuẩn bị bàn ghế, phục vụ đến thu dọn — Thiên Gia Food lo trọn gói để gia đình có thêm thời gian bên khách quý.</p>
+          <div class="hero__cta">
+            <a href="#dat-tiec" class="btn btn--primary btn--lg">Nhận Menu &amp; Báo Giá</a>
+            <a href="#tiec-thuc-te" class="btn btn--outline btn--lg">Xem Tiệc Đã Thực Hiện</a>
+          </div>
+          <div class="hero__benefits" aria-label="Lợi ích dịch vụ">
+            <span>Menu linh hoạt</span><span>Hạng mục rõ ràng</span><span>Phục vụ tận nơi</span><span>Thu dọn sau tiệc</span>
+          </div>
+        </div>
+        <div class="hero__image">
+          <div class="hero__image-frame"><img src="assets/img/hero-mam-tiec.jpg" alt="Mâm món Việt dùng làm hình minh họa cho dịch vụ tiệc tại nhà" width="1100" height="1467"></div>
+          <p class="image-caption">Ảnh món ăn minh họa. Ảnh tiệc thực tế chính chủ đang được cập nhật.</p>
+        </div>
       </div>
-    </div>
-  </div>
-  <div class="footer__bottom container">
-    <p>© <span id="year"></span> Thiên Gia Food. Bảo lưu mọi quyền.</p>
-  </div>
-</footer>
+    </section>
 
-<!-- ===== TOAST THÔNG BÁO ===== -->
-<div class="toast" id="toast"></div>
+    <section class="usp" aria-labelledby="benefits-title">
+      <div class="container">
+        <span class="section-label section-label--center">Dịch vụ trọn gói</span>
+        <h2 class="section-title section-title--center" id="benefits-title">Bốn Việc Quan Trọng Được Chuẩn Bị Chu Đáo</h2>
+        <div class="usp__grid">
+          <article class="usp__item"><span class="usp__icon">01</span><h3>Menu Linh Hoạt</h3><p>Gợi ý món theo dịp tiệc, khẩu vị gia đình và nhu cầu phục vụ.</p></article>
+          <article class="usp__item"><span class="usp__icon">02</span><h3>Giá &amp; Hạng Mục Minh Bạch</h3><p>Thống nhất món ăn và các hạng mục đi kèm trước khi xác nhận.</p></article>
+          <article class="usp__item"><span class="usp__icon">03</span><h3>Phục Vụ Tận Nơi</h3><p>Chuẩn bị và phục vụ tại không gian tổ chức của gia đình.</p></article>
+          <article class="usp__item"><span class="usp__icon">04</span><h3>Thu Dọn Sau Tiệc</h3><p>Sắp xếp dụng cụ và thu dọn phần việc đã thống nhất sau buổi tiệc.</p></article>
+        </div>
+      </div>
+    </section>
 
-<script src="script.js"></script>
+    <section class="services" id="loai-tiec">
+      <div class="container">
+        <span class="section-label section-label--center">Các loại tiệc</span>
+        <h2 class="section-title section-title--center">Chọn Hình Thức Phù Hợp Với Dịp Sum Họp</h2>
+        <p class="section-subtitle">Mỗi buổi tiệc có cách chuẩn bị riêng. Thông tin chi tiết sẽ được trao đổi theo nhu cầu thực tế.</p>
+        <div class="services__grid">
+          <article class="service-card"><div class="service-card__img"><img src="assets/img/dichvu-gia-dinh.jpg" alt="Mâm món Việt cho buổi họp mặt gia đình" loading="lazy"></div><h3>Tiệc Gia Đình</h3><p>Phù hợp họp mặt, sinh nhật và những dịp quây quần tại nhà.</p></article>
+          <article class="service-card"><div class="service-card__img"><img src="assets/img/dichvu-cuoi-hoi.jpg" alt="Không gian nghi lễ cưới hỏi gia đình Việt" loading="lazy"></div><h3>Cưới Hỏi Tại Nhà</h3><p>Chuẩn bị món và hạng mục phục vụ theo kế hoạch của hai gia đình.</p></article>
+          <article class="service-card"><div class="service-card__img"><img src="assets/img/dichvu-tan-gia.jpg" alt="Múa lân trong dịp tân gia hoặc khai trương" loading="lazy"></div><h3>Tân Gia &amp; Khai Trương</h3><p>Hình thức tiệc linh hoạt cho ngày gặp gỡ người thân, bạn bè và đối tác.</p></article>
+          <article class="service-card"><div class="service-card__img"><img src="assets/img/dichvu-le-truyen-thong.jpg" alt="Mâm lễ truyền thống trong không gian gia đình" loading="lazy"></div><h3>Giỗ &amp; Lễ Gia Đình</h3><p>Trao đổi kỹ yêu cầu món ăn và cách phục vụ phù hợp nếp nhà.</p></article>
+          <article class="service-card"><div class="service-card__img"><img src="assets/img/dichvu-buffet.jpg" alt="Quầy buffet với các khay giữ nóng thức ăn" loading="lazy"></div><h3>Buffet</h3><p>Cách phục vụ thuận tiện cho buổi gặp gỡ có nhiều nhóm khách.</p></article>
+          <article class="service-card"><div class="service-card__img"><img src="assets/img/dichvu-sinh-nhat.jpg" alt="Không khí vui tươi trong tiệc sinh nhật" loading="lazy"></div><h3>Sinh Nhật &amp; Kỷ Niệm</h3><p>Gợi ý cách tổ chức phù hợp với độ tuổi, không gian và số khách.</p></article>
+        </div>
+      </div>
+    </section>
+
+    <section class="pricing" id="menu">
+      <div class="container">
+        <span class="section-label section-label--center">Menu theo ngân sách</span>
+        <h2 class="section-title section-title--center">Bắt Đầu Từ Mức Ngân Sách Của Gia Đình</h2>
+        <p class="section-subtitle">Chưa công bố giá khi chưa có bảng giá được xác nhận. Hãy để lại nhu cầu để nhận menu và báo giá phù hợp.</p>
+        <div class="pricing__grid">
+          <article class="pricing__card"><h3>Gọn Gàng</h3><p class="pricing__desc">Ưu tiên món quen, cách phục vụ vừa đủ cho buổi tiệc thân mật.</p><ul class="pricing__features"><li>✓ Chọn theo khẩu vị</li><li>✓ Xác nhận hạng mục trước tiệc</li><li>✓ Điều chỉnh theo số khách</li></ul><a href="#dat-tiec" class="btn btn--outline btn--block">Nhận Gợi Ý Menu</a></article>
+          <article class="pricing__card pricing__card--featured"><h3>Cân Bằng</h3><p class="pricing__desc">Cân đối trải nghiệm món ăn, trình bày và nhân sự phục vụ.</p><ul class="pricing__features"><li>✓ Tư vấn theo dịp tiệc</li><li>✓ Hạng mục phục vụ rõ ràng</li><li>✓ Điều chỉnh theo không gian</li></ul><a href="#dat-tiec" class="btn btn--primary btn--block">Nhận Gợi Ý Menu</a></article>
+          <article class="pricing__card"><h3>Chỉn Chu</h3><p class="pricing__desc">Dành cho gia đình cần chuẩn bị nhiều hạng mục và phục vụ kỹ hơn.</p><ul class="pricing__features"><li>✓ Thống nhất yêu cầu riêng</li><li>✓ Phân bổ nhân sự phù hợp</li><li>✓ Báo giá theo phạm vi thực tế</li></ul><a href="#dat-tiec" class="btn btn--outline btn--block">Trao Đổi Nhu Cầu</a></article>
+        </div>
+      </div>
+    </section>
+
+    <section class="gallery" id="tiec-thuc-te">
+      <div class="container">
+        <span class="section-label section-label--center">Hình ảnh tham khảo</span>
+        <h2 class="section-title section-title--center">Không Gian &amp; Món Tiệc</h2>
+        <p class="section-subtitle">Bộ ảnh hiện tại chỉ dùng để minh họa. Khu vực “tiệc đã thực hiện” sẽ được cập nhật khi có ảnh chính chủ đã xác minh.</p>
+        <div class="gallery__grid">
+          <figure><img src="assets/img/gallery-mam-com.jpg" alt="Bàn món Việt bày trong không gian ngoài trời" loading="lazy"><figcaption>Món ăn minh họa</figcaption></figure>
+          <figure><img src="assets/img/gallery-lau-oc.jpg" alt="Nồi lẩu ốc và rau dùng kèm" loading="lazy"><figcaption>Món ăn minh họa</figcaption></figure>
+          <figure><img src="assets/img/gallery-via-he.jpg" alt="Khung cảnh phục vụ món ăn ngoài trời" loading="lazy"><figcaption>Không gian minh họa</figcaption></figure>
+          <figure><img src="assets/img/gallery-quan-an.jpg" alt="Khu vực chế biến món ăn tại chỗ" loading="lazy"><figcaption>Khâu chuẩn bị minh họa</figcaption></figure>
+          <figure><img src="assets/img/about-doan-ruoc.jpg" alt="Đoàn cưới trong trang phục áo dài Việt Nam" loading="lazy"><figcaption>Nghi lễ gia đình minh họa</figcaption></figure>
+          <figure><img src="assets/img/about-gia-dinh.jpg" alt="Gia đình trong ngày cưới" loading="lazy"><figcaption>Khoảnh khắc gia đình minh họa</figcaption></figure>
+        </div>
+      </div>
+    </section>
+
+    <section class="process" id="quy-trinh">
+      <div class="container"><span class="section-label section-label--center">Quy trình phục vụ</span><h2 class="section-title section-title--center">Rõ Ràng Từ Nhu Cầu Đến Sau Buổi Tiệc</h2>
+        <div class="process__steps">
+          <article class="process__step"><span class="process__num">01</span><h3>Gửi Nhu Cầu</h3><p>Cho biết dịp tiệc, ngày tổ chức, khu vực, số khách và ngân sách dự kiến.</p></article>
+          <article class="process__step"><span class="process__num">02</span><h3>Nhận Gợi Ý</h3><p>Trao đổi menu và phạm vi hạng mục phù hợp với gia đình.</p></article>
+          <article class="process__step"><span class="process__num">03</span><h3>Xác Nhận</h3><p>Thống nhất món, số lượng, thời gian, chi phí và cách phục vụ.</p></article>
+          <article class="process__step"><span class="process__num">04</span><h3>Chuẩn Bị &amp; Phục Vụ</h3><p>Thực hiện các hạng mục tại địa điểm theo nội dung đã xác nhận.</p></article>
+          <article class="process__step"><span class="process__num">05</span><h3>Thu Dọn</h3><p>Thu dọn dụng cụ và phần việc thuộc phạm vi dịch vụ sau tiệc.</p></article>
+        </div>
+      </div>
+    </section>
+
+    <section class="about" id="ly-do">
+      <div class="container about__inner">
+        <div class="about__media"><img class="about__img about__img--1" src="assets/img/dish-buffet-da-dang.jpg" alt="Nhiều món Việt được bày trên bàn ăn" loading="lazy"><img class="about__img about__img--2" src="assets/img/dish-banh-xeo-goi-cuon.jpg" alt="Bánh xèo và gỏi cuốn trên bàn ăn" loading="lazy"></div>
+        <div class="about__content"><span class="section-label">Lý do lựa chọn</span><h2 class="section-title section-title--left">Đủ Chỉn Chu, Vẫn Gần Gũi Với Bữa Tiệc Gia Đình</h2><p>Thiên Gia Food hướng đến một quy trình dễ trao đổi và dễ kiểm soát: nhu cầu được ghi nhận trước, menu và hạng mục được thống nhất rõ, đội ngũ phục vụ đúng phần việc đã cam kết.</p><ul class="about__list"><li>✓ Menu trao đổi theo khẩu vị và ngân sách</li><li>✓ Phạm vi công việc được xác nhận trước</li><li>✓ Phục vụ tại địa điểm tổ chức</li><li>✓ Đồng hành từ chuẩn bị đến thu dọn</li></ul><a href="#dat-tiec" class="btn btn--primary">Gửi Nhu Cầu Tư Vấn</a></div>
+      </div>
+    </section>
+
+    <section class="faq" id="faq">
+      <div class="container"><span class="section-label section-label--center">Giải đáp</span><h2 class="section-title section-title--center">Câu Hỏi Thường Gặp</h2>
+        <div class="faq__list">
+          <article class="faq__item"><button class="faq__question" aria-expanded="false">Tôi cần cung cấp gì để nhận menu và báo giá? <span>+</span></button><div class="faq__answer"><p>Vui lòng cho biết ngày tổ chức, khu vực, loại tiệc, số bàn hoặc số khách, ngân sách dự kiến và yêu cầu đặc biệt nếu có.</p></div></article>
+          <article class="faq__item"><button class="faq__question" aria-expanded="false">Menu có thể điều chỉnh theo khẩu vị không? <span>+</span></button><div class="faq__answer"><p>Có thể trao đổi nhu cầu về khẩu vị, món kiêng hoặc hình thức phục vụ. Khả năng đáp ứng sẽ được xác nhận cùng báo giá.</p></div></article>
+          <article class="faq__item"><button class="faq__question" aria-expanded="false">Báo giá có gồm bàn ghế và phục vụ không? <span>+</span></button><div class="faq__answer"><p>Mỗi nhu cầu có phạm vi khác nhau. Báo giá cần liệt kê rõ món ăn và từng hạng mục đi kèm trước khi gia đình xác nhận.</p></div></article>
+          <article class="faq__item"><button class="faq__question" aria-expanded="false">Thiên Gia Food phục vụ ở khu vực nào? <span>+</span></button><div class="faq__answer"><p>Khu vực phục vụ chính thức đang chờ doanh nghiệp xác nhận. Vui lòng ghi địa điểm tổ chức trong biểu mẫu để được kiểm tra khả năng phục vụ.</p></div></article>
+        </div>
+      </div>
+    </section>
+
+    <section class="booking" id="dat-tiec">
+      <div class="container booking__inner">
+        <div class="booking__info"><span class="section-label">Nhận tư vấn</span><h2 class="section-title section-title--left">Cho Chúng Tôi Biết Kế Hoạch Của Gia Đình</h2><p>Biểu mẫu đã sẵn sàng để thu thập đúng thông tin cần thiết. Hệ thống tiếp nhận đang được cấu hình nên dữ liệu hiện chưa được gửi đi.</p><p class="booking__notice">Không có thông tin nào được gửi tới dịch vụ bên ngoài ở giai đoạn này.</p></div>
+        <form class="booking__form" id="bookingForm" novalidate>
+          <div class="form-row"><div class="form-group"><label for="bkName">Họ tên *</label><input id="bkName" name="name" autocomplete="name" required></div><div class="form-group"><label for="bkPhone">Số điện thoại *</label><input id="bkPhone" name="phone" type="tel" autocomplete="tel" inputmode="tel" required></div></div>
+          <div class="form-row"><div class="form-group"><label for="bkDate">Ngày tổ chức *</label><input id="bkDate" name="eventDate" type="date" required></div><div class="form-group"><label for="bkArea">Khu vực *</label><input id="bkArea" name="area" placeholder="Quận/huyện, tỉnh/thành" required></div></div>
+          <div class="form-row"><div class="form-group"><label for="bkType">Loại tiệc *</label><select id="bkType" name="eventType" required><option value="">Chọn loại tiệc</option><option>Tiệc gia đình</option><option>Cưới hỏi tại nhà</option><option>Tân gia / khai trương</option><option>Giỗ / lễ gia đình</option><option>Buffet</option><option>Sinh nhật / kỷ niệm</option><option>Khác</option></select></div><div class="form-group"><label for="bkGuests">Số bàn hoặc số khách *</label><input id="bkGuests" name="guestCount" placeholder="Ví dụ: 8 bàn hoặc 60 khách" required></div></div>
+          <div class="form-group"><label for="bkBudget">Ngân sách dự kiến</label><input id="bkBudget" name="budget" placeholder="Khoảng ngân sách gia đình dự kiến"></div>
+          <div class="form-group"><label for="bkNote">Ghi chú</label><textarea id="bkNote" name="note" rows="3" placeholder="Khẩu vị, món kiêng, không gian hoặc hạng mục cần trao đổi"></textarea></div>
+          <button type="submit" class="btn btn--primary btn--block">Kiểm Tra Thông Tin</button>
+          <p class="booking__privacy" id="bookingStatus" role="status">Chưa kết nối hệ thống tiếp nhận. Biểu mẫu sẽ không gửi dữ liệu.</p>
+        </form>
+      </div>
+    </section>
+
+    <section class="utilities" id="tien-ich">
+      <div class="container"><span class="section-label section-label--center">Tiện ích</span><h2 class="section-title section-title--center">Chuẩn Bị Thêm Cho Ngày Vui</h2><div class="utilities__grid">
+        <article class="utility"><h3>Thiệp Mời Online</h3><p>Tạo thiệp, xem trước, tải ảnh hoặc chia sẻ đường dẫn ngay trên trình duyệt.</p><a href="thiep-moi.html" class="btn btn--outline">Mở Công Cụ Thiệp</a></article>
+        <article class="utility"><h3>Ghép Ảnh Cưới AI</h3><p>Tạo ảnh cưới từ hai ảnh chân dung khi dịch vụ AI đã được cấu hình.</p><a href="ghep-anh-cuoi.html" class="btn btn--outline">Mở Công Cụ Ảnh</a></article>
+      </div></div>
+    </section>
+
+    <section class="final-cta"><div class="container"><h2>Tiệc tại nhà chỉn chu — chủ nhà thảnh thơi tiếp khách.</h2><p>Từ chọn món, chuẩn bị bàn ghế, phục vụ đến thu dọn — Thiên Gia Food lo trọn gói.</p><a href="#dat-tiec" class="btn btn--primary btn--lg">Nhận Menu &amp; Báo Giá</a></div></section>
+  </main>
+
+  <footer class="footer"><div class="container footer__inner"><div class="footer__brand"><a href="#top" class="logo logo--footer"><span class="logo__mark" aria-hidden="true">TG</span><span class="logo__text">Thiên Gia <em>Food</em></span></a><p>Tiệc tại nhà chỉn chu — chủ nhà thảnh thơi tiếp khách.</p></div><div class="footer__col"><h4>Khám phá</h4><p><a href="#loai-tiec">Các loại tiệc</a></p><p><a href="#menu">Menu theo ngân sách</a></p><p><a href="#quy-trinh">Quy trình</a></p></div><div class="footer__col"><h4>Tiện ích</h4><p><a href="thiep-moi.html">Thiệp mời online</a></p><p><a href="ghep-anh-cuoi.html">Ghép ảnh cưới AI</a></p></div><div class="footer__col"><h4>Liên hệ</h4><p>Thông tin chính thức đang được cập nhật.</p></div></div><div class="footer__bottom"><div class="container">© <span id="year"></span> Thiên Gia Food.</div></div></footer>
+  <div class="toast" id="toast" role="status" aria-live="polite"></div>
+  <script src="site-config.js"></script>
+  <script src="script.js"></script>
 </body>
 </html>

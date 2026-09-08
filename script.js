@@ -1,167 +1,91 @@
-/* Thiên Gia Food — script.js */
-
+/* Thiên Gia Food - tương tác trang chủ, không gửi dữ liệu ra ngoài. */
 document.addEventListener('DOMContentLoaded', () => {
-
-  /* ===== HEADER SCROLL + STICKY ===== */
   const header = document.getElementById('header');
   const backToTop = document.getElementById('backToTop');
+  const burger = document.getElementById('burger');
+  const nav = document.getElementById('nav');
+  const navDropdown = document.getElementById('navDropdown');
+  const navDropdownToggle = document.getElementById('navDropdownToggle');
+
   const onScroll = () => {
-    const scrolled = window.scrollY > 40;
-    header.classList.toggle('is-scrolled', scrolled);
+    header.classList.toggle('is-scrolled', window.scrollY > 40);
     backToTop.classList.toggle('is-visible', window.scrollY > 500);
   };
   window.addEventListener('scroll', onScroll, { passive: true });
   onScroll();
-
   backToTop.addEventListener('click', () => window.scrollTo({ top: 0, behavior: 'smooth' }));
 
-  /* ===== MOBILE NAV ===== */
-  const burger = document.getElementById('burger');
-  const nav = document.getElementById('nav');
-  burger.addEventListener('click', () => nav.classList.toggle('is-open'));
-  nav.querySelectorAll('a').forEach(a => a.addEventListener('click', () => nav.classList.remove('is-open')));
+  const closeMobileNav = () => {
+    nav.classList.remove('is-open');
+    burger.setAttribute('aria-expanded', 'false');
+  };
+  burger.addEventListener('click', () => {
+    const isOpen = nav.classList.toggle('is-open');
+    burger.setAttribute('aria-expanded', String(isOpen));
+  });
+  nav.querySelectorAll('a').forEach(link => link.addEventListener('click', closeMobileNav));
 
-  /* ===== NAV DROPDOWN (Tiện Ích) ===== */
-  const navDropdown = document.getElementById('navDropdown');
-  const navDropdownToggle = document.getElementById('navDropdownToggle');
-  if (navDropdown && navDropdownToggle) {
-    navDropdownToggle.addEventListener('click', (e) => {
-      e.stopPropagation();
-      navDropdown.classList.toggle('is-open');
-    });
-    document.addEventListener('click', (e) => {
-      if (!navDropdown.contains(e.target)) navDropdown.classList.remove('is-open');
-    });
-  }
-
-  /* ===== MENU TABS ===== */
-  const tabs = document.querySelectorAll('.menu__tab');
-  const panels = document.querySelectorAll('.menu__panel');
-  tabs.forEach(tab => {
-    tab.addEventListener('click', () => {
-      tabs.forEach(t => t.classList.remove('is-active'));
-      panels.forEach(p => p.classList.remove('is-active'));
-      tab.classList.add('is-active');
-      document.getElementById(tab.dataset.tab).classList.add('is-active');
-    });
+  navDropdownToggle.addEventListener('click', event => {
+    event.stopPropagation();
+    const isOpen = navDropdown.classList.toggle('is-open');
+    navDropdownToggle.setAttribute('aria-expanded', String(isOpen));
+  });
+  document.addEventListener('click', event => {
+    if (!navDropdown.contains(event.target)) {
+      navDropdown.classList.remove('is-open');
+      navDropdownToggle.setAttribute('aria-expanded', 'false');
+    }
   });
 
-  /* ===== FAQ ACCORDION ===== */
   document.querySelectorAll('.faq__item').forEach(item => {
     const question = item.querySelector('.faq__question');
     const answer = item.querySelector('.faq__answer');
     question.addEventListener('click', () => {
-      const isOpen = item.classList.contains('is-open');
+      const willOpen = !item.classList.contains('is-open');
       document.querySelectorAll('.faq__item').forEach(other => {
         other.classList.remove('is-open');
+        other.querySelector('.faq__question').setAttribute('aria-expanded', 'false');
         other.querySelector('.faq__answer').style.maxHeight = null;
       });
-      if (!isOpen) {
+      if (willOpen) {
         item.classList.add('is-open');
-        answer.style.maxHeight = answer.scrollHeight + 'px';
+        question.setAttribute('aria-expanded', 'true');
+        answer.style.maxHeight = `${answer.scrollHeight}px`;
       }
     });
   });
 
-  /* ===== TESTIMONIAL CAROUSEL (mobile) ===== */
-  const track = document.getElementById('testiTrack');
-  const prevBtn = document.getElementById('testiPrev');
-  const nextBtn = document.getElementById('testiNext');
-  let testiIndex = 0;
-
-  function updateCarousel() {
-    if (window.innerWidth > 768) {
-      track.style.transform = 'none';
-      return;
-    }
-    const slideWidth = track.children[0].getBoundingClientRect().width + 22;
-    track.style.transform = `translateX(-${testiIndex * slideWidth}px)`;
+  const revealTargets = document.querySelectorAll('.usp__item, .service-card, .process__step, .pricing__card, .gallery__grid figure, .about__content, .about__media, .faq__item, .utility');
+  if ('IntersectionObserver' in window) {
+    revealTargets.forEach(element => element.classList.add('reveal'));
+    const observer = new IntersectionObserver(entries => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('is-visible');
+          observer.unobserve(entry.target);
+        }
+      });
+    }, { threshold: 0.12 });
+    revealTargets.forEach(element => observer.observe(element));
   }
-  prevBtn.addEventListener('click', () => {
-    testiIndex = Math.max(0, testiIndex - 1);
-    updateCarousel();
-  });
-  nextBtn.addEventListener('click', () => {
-    testiIndex = Math.min(track.children.length - 1, testiIndex + 1);
-    updateCarousel();
-  });
-  window.addEventListener('resize', updateCarousel);
 
-  function toggleCarouselNav() {
-    const isMobile = window.innerWidth <= 768;
-    document.querySelector('.testimonials__nav').style.display = isMobile ? 'flex' : 'none';
-    if (!isMobile) { testiIndex = 0; }
-    updateCarousel();
-  }
-  window.addEventListener('resize', toggleCarouselNav);
-  toggleCarouselNav();
-
-  /* ===== SCROLL REVEAL ===== */
-  const revealTargets = document.querySelectorAll(
-    '.usp__item, .service-card, .process__step, .pricing__card, .gallery__grid img, .about__content, .about__media, .faq__item'
-  );
-  revealTargets.forEach(el => el.classList.add('reveal'));
-
-  const revealObserver = new IntersectionObserver(entries => {
-    entries.forEach(entry => {
-      if (entry.isIntersecting) {
-        entry.target.classList.add('is-visible');
-        revealObserver.unobserve(entry.target);
-      }
-    });
-  }, { threshold: 0.15 });
-  revealTargets.forEach(el => revealObserver.observe(el));
-
-  /* ===== STAT COUNTERS ===== */
-  const counters = document.querySelectorAll('.counter');
-  const counterObserver = new IntersectionObserver(entries => {
-    entries.forEach(entry => {
-      if (!entry.isIntersecting) return;
-      const el = entry.target;
-      const target = parseInt(el.dataset.target, 10);
-      const duration = 1400;
-      const startTime = performance.now();
-      function tick(now) {
-        const progress = Math.min((now - startTime) / duration, 1);
-        const eased = 1 - Math.pow(1 - progress, 3);
-        el.textContent = Math.round(eased * target).toLocaleString('vi-VN');
-        if (progress < 1) requestAnimationFrame(tick);
-      }
-      requestAnimationFrame(tick);
-      counterObserver.unobserve(el);
-    });
-  }, { threshold: 0.4 });
-  counters.forEach(c => counterObserver.observe(c));
-
-  /* ===== BOOKING FORM ===== */
   const bookingForm = document.getElementById('bookingForm');
-  const toast = document.getElementById('toast');
-  let toastTimer;
-  function showToast(message) {
-    toast.textContent = message;
-    toast.classList.add('is-visible');
-    clearTimeout(toastTimer);
-    toastTimer = setTimeout(() => toast.classList.remove('is-visible'), 3800);
-  }
-
-  bookingForm.addEventListener('submit', (e) => {
-    e.preventDefault();
-    const name = document.getElementById('bkName').value.trim();
-    const phone = document.getElementById('bkPhone').value.trim();
-    const phonePattern = /^(0|\+84)[0-9]{9,10}$/;
-
-    if (!name) {
-      showToast('Vui lòng nhập họ tên của bạn.');
+  const bookingStatus = document.getElementById('bookingStatus');
+  bookingForm.addEventListener('submit', event => {
+    event.preventDefault();
+    if (!bookingForm.checkValidity()) {
+      bookingStatus.textContent = 'Vui lòng điền đầy đủ các trường bắt buộc trước khi kiểm tra.';
+      bookingForm.reportValidity();
       return;
     }
-    if (!phonePattern.test(phone)) {
-      showToast('Số điện thoại chưa hợp lệ, vui lòng kiểm tra lại.');
+    const phone = document.getElementById('bkPhone').value.trim().replace(/[\s.-]/g, '');
+    if (!/^(0|\+84)[0-9]{9,10}$/.test(phone)) {
+      bookingStatus.textContent = 'Số điện thoại chưa đúng định dạng. Vui lòng kiểm tra lại.';
+      document.getElementById('bkPhone').focus();
       return;
     }
-    showToast(`Cảm ơn ${name}! Thiên Gia Food sẽ gọi lại trong 5 phút.`);
-    bookingForm.reset();
+    bookingStatus.textContent = 'Thông tin đã hợp lệ nhưng chưa được gửi. Hệ thống tiếp nhận đang được cấu hình.';
   });
 
-  /* ===== FOOTER YEAR ===== */
   document.getElementById('year').textContent = new Date().getFullYear();
 });
