@@ -35,7 +35,7 @@ document.addEventListener('DOMContentLoaded', () => {
       <div class="party-menu-card__body">
         <div class="party-menu-card__heading"><h3>${menu.name}</h3><p class="party-menu-card__price">${menu.totalPrice}/bàn</p></div>
         <p class="party-menu-card__meta">${menu.dishes.length} món · Giá cần xác nhận theo điều kiện phục vụ</p>
-        <ol class="party-menu-card__dishes">${menu.dishes.slice(0, 3).map(dish => `<li><span>${publicDishName(dish.dishName)}</span><strong>${dish.dishPrice}</strong></li>`).join('')}</ol>
+        <ol class="party-menu-card__dishes">${menu.dishes.map(dish => `<li><span>${publicDishName(dish.dishName)}</span><strong>${dish.dishPrice}</strong></li>`).join('')}</ol>
         <div class="party-menu-card__actions">
           <button class="btn btn--outline" type="button" data-detail="${menu.number}">Xem Chi Tiết</button>
           <button class="btn btn--primary" type="button" data-select="${menu.number}">Chọn Thực Đơn Này</button>
