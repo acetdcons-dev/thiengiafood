@@ -35,7 +35,7 @@
       </a>
       <nav class="nav" id="nav" aria-label="Điều hướng chính">
         <a href="#loai-tiec">Loại Tiệc</a>
-        <a href="#menu">Menu</a>
+        <a href="thuc-don-dai-tiec.html">38 Thực Đơn</a>
         <a href="#tiec-thuc-te">Phong Cách</a>
         <a href="#quy-trinh">Quy Trình</a>
         <a href="#faq">FAQ</a>
@@ -108,13 +108,10 @@
     <section class="pricing" id="menu">
       <div class="container">
         <span class="section-label section-label--center">Menu theo ngân sách</span>
-        <h2 class="section-title section-title--center">Bắt Đầu Từ Mức Ngân Sách Của Gia Đình</h2>
-        <p class="section-subtitle">Chưa công bố giá khi chưa có bảng giá được xác nhận. Hãy để lại nhu cầu để nhận menu và báo giá phù hợp.</p>
-        <div class="pricing__grid">
-          <article class="pricing__card"><h3>Gọn Gàng</h3><p class="pricing__desc">Ưu tiên món quen, cách phục vụ vừa đủ cho buổi tiệc thân mật.</p><ul class="pricing__features"><li>✓ Chọn theo khẩu vị</li><li>✓ Xác nhận hạng mục trước tiệc</li><li>✓ Điều chỉnh theo số khách</li></ul><a href="#dat-tiec" class="btn btn--outline btn--block">Nhận Menu &amp; Báo Giá</a></article>
-          <article class="pricing__card pricing__card--featured"><h3>Cân Bằng</h3><p class="pricing__desc">Cân đối trải nghiệm món ăn, trình bày và nhân sự phục vụ.</p><ul class="pricing__features"><li>✓ Tư vấn theo dịp tiệc</li><li>✓ Hạng mục phục vụ rõ ràng</li><li>✓ Điều chỉnh theo không gian</li></ul><a href="#dat-tiec" class="btn btn--primary btn--block">Nhận Menu &amp; Báo Giá</a></article>
-          <article class="pricing__card"><h3>Chỉn Chu</h3><p class="pricing__desc">Dành cho gia đình cần chuẩn bị nhiều hạng mục và phục vụ kỹ hơn.</p><ul class="pricing__features"><li>✓ Thống nhất yêu cầu riêng</li><li>✓ Phân bổ nhân sự phù hợp</li><li>✓ Báo giá theo phạm vi thực tế</li></ul><a href="#dat-tiec" class="btn btn--outline btn--block">Nhận Menu &amp; Báo Giá</a></article>
-        </div>
+        <h2 class="section-title section-title--center">Một Số Thực Đơn Nổi Bật</h2>
+        <p class="section-subtitle">Giá và món đang được cập nhật theo điều kiện phục vụ thực tế. Vui lòng liên hệ để xác nhận trước khi đặt tiệc.</p>
+        <div class="home-menu-grid" id="homeFeaturedMenus"></div>
+        <div class="section-action"><a href="thuc-don-dai-tiec.html" class="btn btn--primary btn--lg">Xem Tất Cả Thực Đơn</a></div>
       </div>
     </section>
 
@@ -199,6 +196,7 @@
   <footer class="footer"><div class="container footer__inner"><div class="footer__brand"><a href="#top" class="logo logo--footer"><span class="logo__mark" aria-hidden="true">TG</span><span class="logo__text">Thiên Gia <em>Food</em></span></a><p>Tiệc tại nhà chỉn chu — chủ nhà thảnh thơi tiếp khách.</p></div><div class="footer__col"><h4>Khám phá</h4><p><a href="#loai-tiec">Các loại tiệc</a></p><p><a href="#menu">Menu theo ngân sách</a></p><p><a href="#quy-trinh">Quy trình</a></p></div><div class="footer__col"><h4>Tiện ích</h4><p><a href="thiep-moi.html">Thiệp mời online</a></p><p><a href="ghep-anh-cuoi.html">Ghép ảnh cưới AI</a></p><p><a id="footerFacebook" href="#" target="_blank" rel="noopener">Facebook</a></p></div><div class="footer__col"><h4>Liên hệ</h4><p><a id="footerPhone" href="#"></a></p><p><a id="footerEmail" href="#"></a></p><p id="footerAddress"></p></div></div><div class="footer__bottom"><div class="container">© <span id="year"></span> Thiên Gia Food.</div></div></footer>
   <div class="toast" id="toast" role="status" aria-live="polite"></div>
   <script src="site-config.js"></script>
+  <script src="data/party-menus.js"></script>
   <script src="script.js"></script>
 </body>
 </html>

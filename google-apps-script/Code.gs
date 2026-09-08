@@ -1,7 +1,7 @@
 const SPREADSHEET_ID = '1IaS1Ex59MNrwg0y6Tk5Eiayp_zbiE2uS_75AMYtVPmw';
 const NOTIFICATION_EMAIL = 'thiengiafood@gmail.com';
 const SHEET_NAME = 'Leads';
-const HEADERS = ['Thời gian', 'Họ tên', 'Số điện thoại', 'Ngày tổ chức', 'Khu vực', 'Loại tiệc', 'Số bàn/khách', 'Ngân sách', 'Ghi chú', 'Trang gửi'];
+const HEADERS = ['Thời gian', 'Họ tên', 'Số điện thoại', 'Ngày tổ chức', 'Khu vực', 'Loại tiệc', 'Số bàn/khách', 'Ngân sách', 'Thực đơn đã chọn', 'Yêu cầu đổi món', 'Ghi chú', 'Trang gửi'];
 
 function doPost(e) {
   try {
@@ -12,10 +12,12 @@ function doPost(e) {
     const spreadsheet = SpreadsheetApp.openById(SPREADSHEET_ID);
     const sheet = spreadsheet.getSheetByName(SHEET_NAME) || spreadsheet.insertSheet(SHEET_NAME);
     if (sheet.getLastRow() === 0) sheet.appendRow(HEADERS);
+    else sheet.getRange(1, 1, 1, HEADERS.length).setValues([HEADERS]);
 
     const values = [
       new Date(), safeCell(payload.name), safeCell(payload.phone), safeCell(payload.eventDate), safeCell(payload.area),
-      safeCell(payload.eventType), safeCell(payload.guestCount), safeCell(payload.budget), safeCell(payload.note), safeCell(payload.pageUrl)
+      safeCell(payload.eventType), safeCell(payload.guestCount), safeCell(payload.budget), safeCell(payload.selectedMenu),
+      safeCell(payload.dishChanges), safeCell(payload.note), safeCell(payload.pageUrl)
     ];
     sheet.appendRow(values);
 
@@ -30,6 +32,8 @@ function doPost(e) {
         `Loại tiệc: ${payload.eventType}`,
         `Số bàn/khách: ${payload.guestCount}`,
         `Ngân sách: ${payload.budget || 'Chưa cung cấp'}`,
+        `Thực đơn đã chọn: ${payload.selectedMenu || 'Chưa chọn'}`,
+        `Yêu cầu đổi món: ${payload.dishChanges || 'Không có'}`,
         `Ghi chú: ${payload.note || 'Không có'}`
       ].join('\n')
     });

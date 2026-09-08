@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>38 Thực Đơn Đãi Tiệc Tại Nhà | Thiên Gia Food</title>
+  <meta name="description" content="Khám phá 38 thực đơn đãi tiệc tại nhà theo nhiều mức ngân sách và gửi nhu cầu để Thiên Gia Food tư vấn điều chỉnh món.">
+  <meta property="og:type" content="website">
+  <meta property="og:locale" content="vi_VN">
+  <meta property="og:site_name" content="Thiên Gia Food">
+  <meta property="og:title" content="38 Thực Đơn Đãi Tiệc Tại Nhà">
+  <meta property="og:description" content="Các thực đơn được sắp xếp theo nhiều mức ngân sách, phù hợp nhiều dịp tiệc tại nhà.">
+  <meta property="og:image" content="assets/images/ai/social/og-thien-gia-food-ai-v1.webp">
+  <link id="canonical" rel="canonical" href="">
+  <link rel="icon" type="image/svg+xml" href="assets/favicon.svg">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@500;600;700;800&family=Be+Vietnam+Pro:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css">
+  <link rel="stylesheet" href="party-menus.css">
+</head>
+<body class="menus-page">
+  <header class="header is-scrolled" id="header">
+    <div class="container header__inner">
+      <a href="index.html" class="logo" aria-label="Thiên Gia Food - Trang chủ"><span class="logo__mark" aria-hidden="true">TG</span><span class="logo__text">Thiên Gia <em>Food</em></span></a>
+      <nav class="nav" id="nav" aria-label="Điều hướng chính">
+        <a href="index.html#loai-tiec">Loại Tiệc</a><a href="thuc-don-dai-tiec.html" aria-current="page">38 Thực Đơn</a><a href="index.html#tiec-thuc-te">Phong Cách</a><a href="index.html#quy-trinh">Quy Trình</a><a href="index.html#faq">FAQ</a>
+        <div class="nav__dropdown" id="navDropdown"><button type="button" class="nav__dropdown-toggle" id="navDropdownToggle" aria-expanded="false">Tiện Ích <span class="nav__caret" aria-hidden="true">▾</span></button><div class="nav__dropdown-menu"><a href="thiep-moi.html">Thiệp Mời Online</a><a href="ghep-anh-cuoi.html">Ghép Ảnh Cưới AI</a></div></div>
+        <a href="#nhan-tu-van" class="nav__cta btn btn--primary">Nhận Menu &amp; Báo Giá</a>
+      </nav>
+      <button class="burger" id="burger" aria-label="Mở menu" aria-expanded="false"><span></span><span></span><span></span></button>
+    </div>
+  </header>
+
+  <main id="top">
+    <section class="menus-hero">
+      <div class="container">
+        <nav class="breadcrumb" aria-label="Breadcrumb"><a href="index.html">Trang chủ</a><span aria-hidden="true">/</span><span>Thực đơn đãi tiệc</span></nav>
+        <span class="section-label">Gợi ý chọn món</span>
+        <h1>38 Thực Đơn Đãi Tiệc Tại Nhà</h1>
+        <p class="menus-hero__lead">Các thực đơn được sắp xếp theo nhiều mức ngân sách, phù hợp tiệc gia đình, tân gia, sinh nhật, cưới hỏi và sự kiện. Món ăn và hạng mục phục vụ có thể điều chỉnh theo nhu cầu thực tế.</p>
+        <p class="menus-disclaimer">Giá và thực đơn đang được cập nhật theo điều kiện phục vụ thực tế. Vui lòng liên hệ để xác nhận trước khi đặt tiệc.</p>
+      </div>
+    </section>
+
+    <section class="menu-catalog" aria-labelledby="catalogTitle">
+      <div class="container">
+        <div class="catalog-heading"><div><span class="section-label">Danh sách thực đơn</span><h2 id="catalogTitle">Chọn Theo Nhu Cầu Của Gia Đình</h2></div><p id="resultCount" role="status" aria-live="polite"></p></div>
+        <form class="menu-filters" id="menuFilters" role="search">
+          <div class="filter-field filter-field--search"><label for="menuSearch">Tìm tên món</label><input id="menuSearch" type="search" placeholder="Ví dụ: tôm, cá, lẩu..."></div>
+          <div class="filter-field"><label for="priceFilter">Khoảng giá</label><select id="priceFilter"><option value="">Tất cả mức giá</option></select></div>
+          <div class="filter-field"><label for="dishCountFilter">Số món</label><select id="dishCountFilter"><option value="">Tất cả số món</option></select></div>
+          <div class="filter-field"><label for="sortMenus">Sắp xếp</label><select id="sortMenus"><option value="number">Theo số thực đơn</option><option value="price-asc">Giá tăng dần</option><option value="price-desc">Giá giảm dần</option></select></div>
+          <label class="filter-check"><input id="featuredFilter" type="checkbox"><span>Chỉ xem thực đơn nổi bật</span></label>
+          <button class="btn btn--outline" id="resetFilters" type="reset">Xóa bộ lọc</button>
+        </form>
+        <div class="menu-grid" id="menuGrid"></div>
+        <p class="empty-state" id="emptyState" hidden>Không tìm thấy thực đơn phù hợp. Hãy thử xóa bớt bộ lọc.</p>
+      </div>
+    </section>
+
+    <section class="menu-consult" id="nhan-tu-van">
+      <div class="container menu-consult__inner">
+        <div><span class="section-label">Nhận tư vấn</span><h2>Chọn Thực Đơn, Sau Đó Điều Chỉnh Theo Buổi Tiệc</h2><p>Để trao đổi nhanh hơn, gia đình vui lòng chuẩn bị ngày tổ chức, khu vực, loại tiệc và số bàn.</p></div>
+        <form class="booking__form" id="menuBookingForm" novalidate>
+          <div class="form-row"><div class="form-group"><label for="mfName">Họ tên *</label><input id="mfName" name="name" autocomplete="name" required></div><div class="form-group"><label for="mfPhone">Số điện thoại *</label><input id="mfPhone" name="phone" type="tel" autocomplete="tel" inputmode="tel" required></div></div>
+          <div class="form-row"><div class="form-group"><label for="mfDate">Ngày tổ chức *</label><input id="mfDate" name="eventDate" type="date" required></div><div class="form-group"><label for="mfArea">Khu vực *</label><input id="mfArea" name="area" list="menuServiceAreas" required><datalist id="menuServiceAreas"></datalist></div></div>
+          <div class="form-row"><div class="form-group"><label for="mfType">Loại tiệc *</label><select id="mfType" name="eventType" required><option value="">Chọn loại tiệc</option></select></div><div class="form-group"><label for="mfTables">Số bàn *</label><input id="mfTables" name="tableCount" placeholder="Ví dụ: 8 bàn" required></div></div>
+          <div class="form-group"><label for="mfMenu">Thực đơn đã chọn</label><input id="mfMenu" name="selectedMenu" readonly placeholder="Chọn từ danh sách phía trên"></div>
+          <div class="form-group"><label for="mfChanges">Yêu cầu đổi món</label><textarea id="mfChanges" name="dishChanges" rows="3"></textarea></div>
+          <div class="form-group"><label for="mfNote">Ghi chú</label><textarea id="mfNote" name="note" rows="3"></textarea></div>
+          <div class="form-trap" aria-hidden="true"><label for="mfWebsite">Website</label><input id="mfWebsite" name="website" tabindex="-1" autocomplete="off"></div>
+          <button class="btn btn--primary btn--block" id="menuBookingSubmit" type="submit">Nhận Menu &amp; Báo Giá</button>
+          <p class="booking__privacy" id="menuBookingStatus" role="status" aria-live="polite">Thông tin chỉ được gửi khi bạn bấm nút xác nhận.</p>
+        </form>
+      </div>
+    </section>
+  </main>
+
+  <div class="menu-modal" id="menuModal" hidden>
+    <div class="menu-modal__backdrop" data-close-modal></div>
+    <section class="menu-modal__dialog" role="dialog" aria-modal="true" aria-labelledby="modalTitle" tabindex="-1">
+      <button class="menu-modal__close" type="button" data-close-modal aria-label="Đóng chi tiết">×</button>
+      <div id="menuModalContent"></div>
+    </section>
+  </div>
+
+  <footer class="footer"><div class="container footer__inner"><div class="footer__brand"><a href="index.html" class="logo logo--footer"><span class="logo__mark" aria-hidden="true">TG</span><span class="logo__text">Thiên Gia <em>Food</em></span></a><p>Tiệc tại nhà chỉn chu — chủ nhà thảnh thơi tiếp khách.</p></div><div class="footer__col"><h4>Khám phá</h4><p><a href="index.html#loai-tiec">Các loại tiệc</a></p><p><a href="thuc-don-dai-tiec.html">38 thực đơn</a></p><p><a href="index.html#quy-trinh">Quy trình</a></p></div><div class="footer__col"><h4>Tiện ích</h4><p><a href="thiep-moi.html">Thiệp mời online</a></p><p><a href="ghep-anh-cuoi.html">Ghép ảnh cưới AI</a></p><p><a id="footerFacebook" href="#" target="_blank" rel="noopener">Facebook</a></p></div><div class="footer__col"><h4>Liên hệ</h4><p><a id="footerPhone" href="#"></a></p><p><a id="footerEmail" href="#"></a></p><p id="footerAddress"></p></div></div><div class="footer__bottom"><div class="container">© <span id="year"></span> Thiên Gia Food.</div></div></footer>
+
+  <script src="site-config.js"></script>
+  <script src="data/party-menus.js"></script>
+  <script src="party-menus.js"></script>
+</body>
+</html>

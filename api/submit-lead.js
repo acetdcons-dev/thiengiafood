@@ -40,8 +40,10 @@ module.exports = async (req, res) => {
     eventDate: clean(body.eventDate, 20),
     area: clean(body.area, 150),
     eventType: clean(body.eventType, 100),
-    guestCount: clean(body.guestCount, 100),
+    guestCount: clean(body.guestCount || body.tableCount, 100),
     budget: clean(body.budget, 100),
+    selectedMenu: clean(body.selectedMenu, 150),
+    dishChanges: clean(body.dishChanges, 1000),
     note: clean(body.note, 1000),
     pageUrl: clean(body.pageUrl, 500),
     submittedAt: new Date().toISOString()

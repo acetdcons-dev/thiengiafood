@@ -11,4 +11,6 @@
    - `LEAD_WEBHOOK_SECRET`: đúng chuỗi bí mật ở bước 3.
 8. Deploy lại môi trường thử nghiệm và gửi một lead kiểm tra. Xác nhận tab `Leads` được tạo trong Spreadsheet và email thông báo đến `thiengiafood@gmail.com`.
 
+Sau khi cập nhật Giai đoạn 4, cần deploy lại Apps Script để nhận thêm hai cột `Thực đơn đã chọn` và `Yêu cầu đổi món`. Không deploy production trước khi chủ dự án xác nhận.
+
 Không đưa chuỗi bí mật vào `site-config.js` hoặc mã JavaScript phía trình duyệt.

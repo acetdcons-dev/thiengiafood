@@ -45,3 +45,14 @@ Mỗi prompt riêng bổ sung đúng chủ thể tương ứng: tiệc gia đìn
 - Tất cả ảnh nội dung dưới hero có `loading="lazy"`, `decoding="async"`, `width`, `height` và alt tiếng Việt.
 - Open Graph đang dùng đường dẫn tương đối. Khi có domain production, cần đổi sang URL tuyệt đối để crawler mạng xã hội hoạt động ổn định.
 - Khi có ảnh chính chủ đã được phép sử dụng, nên thay ảnh AI ở các khu vực cần tạo niềm tin và giữ chú thích minh bạch trong thời gian chuyển tiếp.
+
+## Bộ ảnh 38 thực đơn - Giai đoạn 4
+
+- Công cụ tạo: built-in `image_gen`, 38 lượt tạo riêng, không dùng ảnh nguồn hoặc ảnh tham chiếu.
+- File: `assets/images/ai/menus/menu-01-thien-gia-ai-v1` đến `menu-38-thien-gia-ai-v1`, mỗi ảnh có PNG 1200×900 và WebP 1200×900.
+- Nội dung: mỗi ảnh tập trung vào 2-3 món đại diện lấy từ đúng thực đơn tương ứng; bối cảnh bàn tiệc tại nhà Việt Nam.
+- Kiểm tra trực quan: đã xem riêng cả 38 WebP; không phát hiện chữ, logo, watermark, tay người lỗi, dụng cụ biến dạng nghiêm trọng hoặc hai ảnh trùng nguyên bản.
+- Ảnh cần tạo lại sau kiểm tra: không có.
+- Dung lượng 38 WebP: 3.891.724 byte (khoảng 3,71 MiB); nhỏ nhất 68.264 byte, lớn nhất 140.026 byte. Ảnh dưới màn hình đầu dùng lazy-load.
+- Ảnh được chú thích rõ là minh họa AI, không được trình bày như hình tiệc hoặc món giao thực tế.
+- Bản sinh trực tiếp 1448×1086 được giữ cục bộ trong thư mục `originals/` và không đưa vào Git; PNG bàn giao trong dự án đã chuẩn hóa đúng 1200×900 theo yêu cầu.
