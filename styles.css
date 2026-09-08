@@ -576,6 +576,11 @@ h1, h2, h3, h4 { font-family: var(--font-display); font-weight: 700; color: var(
 }
 .booking__privacy { text-align: center; font-size: 0.8rem; color: var(--ink-700); margin-top: 14px; }
 .booking__notice { border-left: 3px solid var(--gold-400); padding-left: 14px; }
+.booking__contacts { display: flex; flex-direction: column; align-items: flex-start; gap: 10px; margin: 24px 0 16px; }
+.booking__contacts a { color: var(--gold-400); font-weight: 700; }
+.booking__areas { font-size: 0.88rem; }
+.form-trap { position: absolute; left: -10000px; width: 1px; height: 1px; overflow: hidden; }
+.booking__form button[disabled] { cursor: wait; opacity: 0.7; }
 
 /* ===== UTILITIES ===== */
 .utilities { padding: 80px 0; background: var(--cream-100); }

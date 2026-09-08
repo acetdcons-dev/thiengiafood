@@ -1,11 +1,34 @@
 /* Thiên Gia Food - tương tác trang chủ, không gửi dữ liệu ra ngoài. */
 document.addEventListener('DOMContentLoaded', () => {
+  const config = window.THIEN_GIA_CONFIG;
   const header = document.getElementById('header');
   const backToTop = document.getElementById('backToTop');
   const burger = document.getElementById('burger');
   const nav = document.getElementById('nav');
   const navDropdown = document.getElementById('navDropdown');
   const navDropdownToggle = document.getElementById('navDropdownToggle');
+
+  const setLink = (id, href, text) => {
+    const element = document.getElementById(id);
+    if (!element) return;
+    element.href = href;
+    element.textContent = text;
+    element.hidden = false;
+  };
+  const phoneHref = `tel:${config.contact.phone}`;
+  setLink('floatCall', phoneHref, '☎');
+  setLink('floatZalo', config.contact.zaloUrl, 'Zalo');
+  setLink('headerPhone', phoneHref, config.contact.phoneDisplay);
+  setLink('bookingPhone', phoneHref, `Hotline: ${config.contact.phoneDisplay}`);
+  setLink('bookingZalo', config.contact.zaloUrl, `Zalo: ${config.contact.phoneDisplay}`);
+  setLink('bookingEmail', `mailto:${config.contact.email}`, config.contact.email);
+  setLink('footerPhone', phoneHref, config.contact.phoneDisplay);
+  setLink('footerEmail', `mailto:${config.contact.email}`, config.contact.email);
+  setLink('footerFacebook', config.contact.socialLinks[0].url, config.contact.socialLinks[0].name);
+  document.getElementById('footerAddress').textContent = config.contact.address;
+  document.getElementById('bookingAreas').textContent = `Khu vực phục vụ: ${config.serviceAreas.join(', ')}.`;
+  document.getElementById('serviceAreaOptions').innerHTML = config.serviceAreas.map(area => `<option value="${area}"></option>`).join('');
+  document.getElementById('bkType').insertAdjacentHTML('beforeend', config.eventTypes.map(type => `<option>${type}</option>`).join(''));
 
   const onScroll = () => {
     header.classList.toggle('is-scrolled', window.scrollY > 40);
@@ -71,7 +94,9 @@ document.addEventListener('DOMContentLoaded', () => {
 
   const bookingForm = document.getElementById('bookingForm');
   const bookingStatus = document.getElementById('bookingStatus');
-  bookingForm.addEventListener('submit', event => {
+  const bookingSubmit = document.getElementById('bookingSubmit');
+  const formStartedAt = Date.now();
+  bookingForm.addEventListener('submit', async event => {
     event.preventDefault();
     if (!bookingForm.checkValidity()) {
       bookingStatus.textContent = 'Vui lòng điền đầy đủ các trường bắt buộc trước khi kiểm tra.';
@@ -84,7 +109,34 @@ document.addEventListener('DOMContentLoaded', () => {
       document.getElementById('bkPhone').focus();
       return;
     }
-    bookingStatus.textContent = 'Thông tin đã hợp lệ nhưng chưa được gửi. Hệ thống tiếp nhận đang được cấu hình.';
+    if (!config.leadEndpoint) {
+      bookingStatus.textContent = 'Hệ thống tiếp nhận đang được cấu hình. Vui lòng liên hệ qua hotline hoặc Zalo.';
+      return;
+    }
+
+    const data = Object.fromEntries(new FormData(bookingForm).entries());
+    data.pageUrl = window.location.href;
+    data.formStartedAt = formStartedAt;
+    bookingSubmit.disabled = true;
+    bookingSubmit.textContent = 'Đang gửi...';
+    bookingStatus.textContent = 'Đang gửi yêu cầu tư vấn.';
+
+    try {
+      const response = await fetch(config.leadEndpoint, {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify(data)
+      });
+      const result = await response.json().catch(() => ({}));
+      if (!response.ok) throw new Error(result.message || 'Không thể gửi yêu cầu lúc này.');
+      bookingStatus.textContent = 'Thiên Gia Food đã nhận thông tin và sẽ liên hệ tư vấn.';
+      bookingForm.reset();
+    } catch (error) {
+      bookingStatus.textContent = error.message || 'Không thể gửi yêu cầu. Vui lòng liên hệ qua hotline hoặc Zalo.';
+    } finally {
+      bookingSubmit.disabled = false;
+      bookingSubmit.textContent = 'Gửi Yêu Cầu Tư Vấn';
+    }
   });
 
   document.getElementById('year').textContent = new Date().getFullYear();
