@@ -130,11 +130,14 @@ document.addEventListener('DOMContentLoaded', () => {
 
   const burger = document.getElementById('burger');
   const nav = document.getElementById('nav');
-  const dropdown = document.getElementById('navDropdown');
-  const dropdownToggle = document.getElementById('navDropdownToggle');
+  const dropdowns = [...document.querySelectorAll('.nav__dropdown')];
   burger.addEventListener('click', () => { const open = nav.classList.toggle('is-open'); burger.setAttribute('aria-expanded', String(open)); });
   nav.querySelectorAll('a').forEach(link => link.addEventListener('click', () => { nav.classList.remove('is-open'); burger.setAttribute('aria-expanded', 'false'); }));
-  dropdownToggle.addEventListener('click', () => { const open = dropdown.classList.toggle('is-open'); dropdownToggle.setAttribute('aria-expanded', String(open)); });
+  dropdowns.forEach(dropdown => dropdown.querySelector('.nav__dropdown-toggle').addEventListener('click', event => {
+    dropdowns.filter(item => item !== dropdown).forEach(item => { item.classList.remove('is-open'); item.querySelector('.nav__dropdown-toggle').setAttribute('aria-expanded', 'false'); });
+    const open = dropdown.classList.toggle('is-open');
+    event.currentTarget.setAttribute('aria-expanded', String(open));
+  }));
 
   document.getElementById('menuServiceAreas').innerHTML = config.serviceAreas.map(area => `<option value="${area}"></option>`).join('');
   document.getElementById('mfType').insertAdjacentHTML('beforeend', config.eventTypes.map(type => `<option>${type}</option>`).join(''));
