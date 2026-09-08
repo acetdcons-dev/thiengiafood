@@ -321,10 +321,21 @@ h1, h2, h3, h4 { font-family: var(--font-display); font-weight: 700; color: var(
 /* ===== ABOUT ===== */
 .about { padding: 90px 0; background: var(--cream-200); }
 .about__inner { display: grid; grid-template-columns: 0.9fr 1.1fr; gap: 60px; align-items: center; }
-.about__media { position: relative; }
-.about__img { border-radius: var(--radius-md); box-shadow: var(--shadow-card); }
-.about__img--1 { width: 80%; }
-.about__img--2 { width: 60%; position: absolute; right: -10px; bottom: -40px; border: 5px solid var(--cream-200); }
+.about__media {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 12px;
+  height: 420px;
+}
+.about__img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center;
+  border-radius: var(--radius-md);
+  box-shadow: var(--shadow-card);
+}
+.about__img--1, .about__img--2 { position: static; }
 .about__seal {
   position: absolute; top: -20px; right: 10px;
   width: 100px; height: 100px; border-radius: 50%;
@@ -620,7 +631,7 @@ h1, h2, h3, h4 { font-family: var(--font-display); font-weight: 700; color: var(
   .hero__image { order: 1; max-width: 420px; margin: 0 auto; }
   .usp__grid, .services__grid, .pricing__grid, .gallery__grid { grid-template-columns: repeat(2, 1fr); }
   .about__inner, .booking__inner { grid-template-columns: 1fr; }
-  .about__media { margin-bottom: 40px; max-width: 420px; }
+  .about__media { margin: 0 auto 40px; width: 100%; max-width: 620px; height: 360px; }
   .process__steps { grid-template-columns: repeat(3, 1fr); }
   .menu__dishes { grid-template-columns: repeat(2, 1fr); }
   .testimonials__track { grid-template-columns: repeat(2, 1fr); }
@@ -671,4 +682,5 @@ h1, h2, h3, h4 { font-family: var(--font-display); font-weight: 700; color: var(
   .float-btn--call span:not(svg) { display: none; }
   .hero__benefits { grid-template-columns: 1fr; }
   .hero__cta .btn { width: 100%; }
+  .about__media { height: 250px; gap: 8px; }
 }
