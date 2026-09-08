@@ -32,7 +32,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
   const featuredMenuGrid = document.getElementById('homeFeaturedMenus');
   if (featuredMenuGrid && window.PARTY_MENUS) {
-    featuredMenuGrid.innerHTML = window.PARTY_MENUS.filter(menu => menu.featured).map(menu => `<article class="home-menu-card"><img src="${menu.image}" alt="${menu.imageAlt}" width="1200" height="900" loading="lazy" decoding="async"><div class="home-menu-card__body"><h3>${menu.name}</h3><p>${menu.totalPrice}/bàn</p><a class="btn btn--outline btn--block" href="thuc-don-dai-tiec.html?menu=${menu.number}">Xem Chi Tiết</a></div></article>`).join('');
+    featuredMenuGrid.innerHTML = window.PARTY_MENUS.filter(menu => menu.featured).map(menu => `<article class="home-menu-card"><div class="home-menu-card__media"><img src="${menu.image}" alt="${menu.imageAlt}" width="1200" height="900" loading="lazy" decoding="async"></div><div class="home-menu-card__body"><h3>${menu.name}</h3><p>${menu.totalPrice}/bàn</p><a class="btn btn--outline btn--block" href="thuc-don-dai-tiec.html?menu=${menu.number}">Xem Chi Tiết</a></div></article>`).join('');
   }
 
   const onScroll = () => {
