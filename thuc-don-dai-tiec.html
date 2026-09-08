@@ -20,6 +20,7 @@
   <link rel="stylesheet" href="party-menus.css">
 </head>
 <body class="menus-page">
+  <a class="skip-link" href="#main-content">Bỏ qua menu, đến nội dung chính</a>
   <header class="header is-scrolled" id="header">
     <div class="container header__inner">
       <a href="index.html" class="logo" aria-label="Thiên Gia Food - Trang chủ"><span class="logo__mark" aria-hidden="true">TG</span><span class="logo__text">Thiên Gia <em>Food</em></span></a>
@@ -34,12 +35,12 @@
     </div>
   </header>
 
-  <main id="top">
+  <main id="main-content" tabindex="-1">
     <section class="menus-hero">
       <div class="container">
         <nav class="breadcrumb" aria-label="Breadcrumb"><a href="index.html">Trang chủ</a><span aria-hidden="true">/</span><span>Thực đơn đãi tiệc</span></nav>
         <span class="section-label">Gợi ý chọn món</span>
-        <h1>38 Thực Đơn Đãi Tiệc Tại Nhà</h1>
+        <h1>38 thực đơn đãi tiệc tại nhà</h1>
         <p class="menus-hero__lead">Các thực đơn được sắp xếp theo nhiều mức ngân sách, phù hợp tiệc gia đình, tân gia, sinh nhật, cưới hỏi và sự kiện. Món ăn và hạng mục phục vụ có thể điều chỉnh theo nhu cầu thực tế.</p>
         <p class="menus-disclaimer">Giá và thực đơn đang được cập nhật theo điều kiện phục vụ thực tế. Vui lòng liên hệ để xác nhận trước khi đặt tiệc.</p>
       </div>
@@ -47,7 +48,7 @@
 
     <section class="menu-catalog" aria-labelledby="catalogTitle">
       <div class="container">
-        <div class="catalog-heading"><div><span class="section-label">Danh sách thực đơn</span><h2 id="catalogTitle">Chọn Theo Nhu Cầu Của Gia Đình</h2></div><p id="resultCount" role="status" aria-live="polite"></p></div>
+        <div class="catalog-heading"><div><span class="section-label">Danh sách thực đơn</span><h2 id="catalogTitle">Chọn theo nhu cầu của gia đình</h2></div><p id="resultCount" role="status" aria-live="polite"></p></div>
         <form class="menu-filters" id="menuFilters" role="search">
           <div class="filter-field filter-field--search"><label for="menuSearch">Tìm tên món</label><input id="menuSearch" type="search" placeholder="Ví dụ: tôm, cá, lẩu..."></div>
           <div class="filter-field"><label for="priceFilter">Khoảng giá</label><select id="priceFilter"><option value="">Tất cả mức giá</option></select></div>

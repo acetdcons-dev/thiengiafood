@@ -21,6 +21,7 @@
   <link rel="stylesheet" href="styles.css">
 </head>
 <body>
+  <a class="skip-link" id="top" href="#main-content">Bỏ qua menu, đến nội dung chính</a>
   <div class="float-actions">
     <a class="float-btn float-btn--call" id="floatCall" href="#" aria-label="Gọi Thiên Gia Food" title="Gọi Thiên Gia Food" hidden>☎</a>
     <a class="float-btn float-btn--zalo" id="floatZalo" href="#" target="_blank" rel="noopener" aria-label="Chat Zalo" title="Chat Zalo" hidden>Zalo</a>
@@ -29,7 +30,7 @@
 
   <header class="header" id="header">
     <div class="container header__inner">
-      <a href="#top" class="logo" aria-label="Thiên Gia Food - Trang chủ">
+      <a href="#main-content" class="logo" aria-label="Thiên Gia Food - Trang chủ">
         <span class="logo__mark" aria-hidden="true">TG</span>
         <span class="logo__text">Thiên Gia <em>Food</em></span>
       </a>
@@ -53,17 +54,17 @@
     </div>
   </header>
 
-  <main id="top">
+  <main id="main-content" tabindex="-1">
     <section class="hero">
       <div class="hero__bg" aria-hidden="true"></div>
       <div class="container hero__inner">
         <div class="hero__text">
           <span class="eyebrow">THIÊN GIA FOOD · TIỆC TẠI NHÀ</span>
-          <h1>Tiệc Tại Nhà Chỉn Chu — Chủ Nhà Thảnh Thơi Tiếp Khách</h1>
+          <h1>Tiệc tại nhà chỉn chu.<br>Chủ nhà thảnh thơi tiếp khách.</h1>
           <p class="hero__subtitle">Từ chọn món, chuẩn bị bàn ghế, phục vụ đến thu dọn — Thiên Gia Food lo trọn gói để gia đình có thêm thời gian bên khách quý.</p>
           <div class="hero__cta">
             <a href="#dat-tiec" class="btn btn--primary btn--lg">Nhận Menu &amp; Báo Giá</a>
-            <a href="#tiec-thuc-te" class="btn btn--outline btn--lg">Xem Phong Cách Tiệc</a>
+            <a href="#tiec-thuc-te" class="btn btn--outline btn--lg">Xem phong cách tiệc</a>
           </div>
           <div class="hero__benefits" aria-label="Lợi ích dịch vụ">
             <span>Menu linh hoạt</span><span>Hạng mục rõ ràng</span><span>Phục vụ tận nơi</span><span>Thu dọn sau tiệc</span>
@@ -78,7 +79,7 @@
     <section class="usp" aria-labelledby="benefits-title">
       <div class="container">
         <span class="section-label section-label--center">Dịch vụ trọn gói</span>
-        <h2 class="section-title section-title--center" id="benefits-title">Bốn Việc Quan Trọng Được Chuẩn Bị Chu Đáo</h2>
+        <h2 class="section-title section-title--center" id="benefits-title">Bốn việc quan trọng được chuẩn bị chu đáo</h2>
         <div class="usp__grid">
           <article class="usp__item"><span class="usp__icon">01</span><h3>Menu Linh Hoạt</h3><p>Gợi ý món theo dịp tiệc, khẩu vị gia đình và nhu cầu phục vụ.</p></article>
           <article class="usp__item"><span class="usp__icon">02</span><h3>Giá &amp; Hạng Mục Minh Bạch</h3><p>Thống nhất món ăn và các hạng mục đi kèm trước khi xác nhận.</p></article>
@@ -91,7 +92,7 @@
     <section class="services" id="loai-tiec">
       <div class="container">
         <span class="section-label section-label--center">Các loại tiệc</span>
-        <h2 class="section-title section-title--center">Chọn Hình Thức Phù Hợp Với Dịp Sum Họp</h2>
+        <h2 class="section-title section-title--center">Chọn hình thức phù hợp với dịp sum họp</h2>
         <p class="section-subtitle">Nhận tiệc cưới hỏi, thôi nôi, sinh nhật, BBQ, tiệc công ty, đám giỗ, ma chay và tiệc riêng tư tại nhà.</p>
         <div class="services__grid">
           <a class="service-card" href="thuc-don-dai-tiec.html"><div class="service-card__img"><img src="assets/images/ai/services/service-family-party-ai-v1.webp" alt="Gia đình Việt Nam nhiều thế hệ quây quần trong buổi tiệc tại nhà" width="1200" height="900" loading="lazy" decoding="async"></div><h3>Tiệc Gia Đình &amp; Riêng Tư</h3><p>Phù hợp họp mặt, thôi nôi, sinh nhật và những dịp quây quần tại nhà.</p></a>
@@ -107,7 +108,7 @@
     <section class="pricing" id="menu">
       <div class="container">
         <span class="section-label section-label--center">Menu theo ngân sách</span>
-        <h2 class="section-title section-title--center">Một Số Thực Đơn Nổi Bật</h2>
+        <h2 class="section-title section-title--center">Một số thực đơn nổi bật</h2>
         <p class="section-subtitle">Giá và món đang được cập nhật theo điều kiện phục vụ thực tế. Vui lòng liên hệ để xác nhận trước khi đặt tiệc.</p>
         <div class="home-menu-grid" id="homeFeaturedMenus"></div>
         <div class="section-action"><a href="thuc-don-dai-tiec.html" class="btn btn--primary btn--lg">Xem Tất Cả Thực Đơn</a></div>
@@ -117,7 +118,7 @@
     <section class="gallery" id="tiec-thuc-te">
       <div class="container">
         <span class="section-label section-label--center">Hình ảnh tham khảo</span>
-        <h2 class="section-title section-title--center">Phong Cách Tiệc Gợi Ý</h2>
+        <h2 class="section-title section-title--center">Phong cách tiệc gợi ý</h2>
         <p class="section-subtitle">Hình ảnh minh họa phong cách setup. Thiết kế và món ăn thực tế được điều chỉnh theo địa điểm, số khách và gói dịch vụ.</p>
         <div class="gallery__grid">
           <figure><img src="assets/images/ai/concepts/concept-standard-table-ai-v1.webp" alt="Bàn tiệc gia đình với sáu món Việt cân đối" width="1200" height="800" loading="lazy" decoding="async"><figcaption>Bàn tiệc gọn gàng</figcaption></figure>
@@ -134,7 +135,7 @@
       <div class="container furniture__inner">
         <div class="furniture__content">
           <span class="section-label">Dịch vụ bàn ghế</span>
-          <h2 class="section-title section-title--left">Bàn Ghế &amp; Dụng Cụ Tiệc Giao Tận Nơi</h2>
+          <h2 class="section-title section-title--left">Bàn ghế và dụng cụ tiệc giao tận nơi</h2>
           <p>Thiên Gia Food chuẩn bị bàn ghế sạch sẽ, đồng bộ theo quy mô và không gian buổi tiệc. Có thể thuê riêng hoặc kết hợp trong gói nấu tiệc trọn gói.</p>
           <ul class="furniture__features">
             <li><strong>Bàn tiệc linh hoạt</strong><span>Bàn tròn, bàn dài và bàn buffet theo số khách.</span></li>
@@ -153,7 +154,7 @@
     </section>
 
     <section class="process" id="quy-trinh">
-      <div class="container"><span class="section-label section-label--center">Quy trình phục vụ</span><h2 class="section-title section-title--center">Rõ Ràng Từ Nhu Cầu Đến Sau Buổi Tiệc</h2>
+      <div class="container"><span class="section-label section-label--center">Quy trình phục vụ</span><h2 class="section-title section-title--center">Rõ ràng từ nhu cầu đến sau buổi tiệc</h2>
         <div class="process__steps">
           <article class="process__step"><span class="process__num">01</span><h3>Gửi Nhu Cầu</h3><p>Cho biết dịp tiệc, ngày tổ chức, khu vực, số khách và ngân sách dự kiến.</p></article>
           <article class="process__step"><span class="process__num">02</span><h3>Nhận Gợi Ý</h3><p>Trao đổi menu và phạm vi hạng mục phù hợp với gia đình.</p></article>
@@ -178,7 +179,7 @@
     <section class="news" id="tin-tuc">
       <div class="container">
         <span class="section-label section-label--center">Cẩm nang tổ chức tiệc</span>
-        <h2 class="section-title section-title--center">Tin Tức &amp; Kinh Nghiệm Hữu Ích</h2>
+        <h2 class="section-title section-title--center">Tin tức và kinh nghiệm hữu ích</h2>
         <p class="section-subtitle">Những gợi ý ngắn gọn giúp gia đình dễ chọn món, dự trù số bàn và chuẩn bị không gian đón khách.</p>
         <div class="news__grid">
           <article class="news-card"><div class="news-card__media"><img src="assets/images/ai/services/service-family-party-ai-v1.webp" alt="Gia đình quây quần trong buổi tiệc tại nhà" width="1200" height="900" loading="lazy" decoding="async"></div><div class="news-card__body"><span>Kinh nghiệm đặt tiệc</span><h3>Cách Tính Số Bàn Tiệc Vừa Đủ, Hạn Chế Lãng Phí</h3><p>Lập danh sách khách, dự phòng số người phát sinh và chọn cách xếp bàn phù hợp.</p><a href="tin-tuc.html#tinh-so-ban">Đọc bài viết <span aria-hidden="true">→</span></a></div></article>
@@ -190,7 +191,7 @@
     </section>
 
     <section class="faq" id="faq">
-      <div class="container"><span class="section-label section-label--center">Giải đáp</span><h2 class="section-title section-title--center">Câu Hỏi Thường Gặp</h2>
+      <div class="container"><span class="section-label section-label--center">Giải đáp</span><h2 class="section-title section-title--center">Câu hỏi thường gặp</h2>
         <div class="faq__list">
           <article class="faq__item"><button class="faq__question" aria-expanded="false">Tôi cần cung cấp gì để nhận menu và báo giá? <span>+</span></button><div class="faq__answer"><p>Vui lòng cho biết ngày tổ chức, khu vực, loại tiệc, số bàn hoặc số khách, ngân sách dự kiến và yêu cầu đặc biệt nếu có.</p></div></article>
           <article class="faq__item"><button class="faq__question" aria-expanded="false">Menu có thể điều chỉnh theo khẩu vị không? <span>+</span></button><div class="faq__answer"><p>Có thể trao đổi nhu cầu về khẩu vị, món kiêng hoặc hình thức phục vụ. Khả năng đáp ứng sẽ được xác nhận cùng báo giá.</p></div></article>
@@ -219,7 +220,7 @@
     </section>
 
     <section class="utilities" id="tien-ich">
-      <div class="container"><span class="section-label section-label--center">Tiện ích</span><h2 class="section-title section-title--center">Chuẩn Bị Thêm Cho Ngày Vui</h2><div class="utilities__grid">
+      <div class="container"><span class="section-label section-label--center">Tiện ích</span><h2 class="section-title section-title--center">Chuẩn bị thêm cho ngày vui</h2><div class="utilities__grid">
         <article class="utility"><h3>Thiệp Mời Online</h3><p>Tạo thiệp, xem trước, tải ảnh hoặc chia sẻ đường dẫn ngay trên trình duyệt.</p><a href="thiep-moi.html" class="btn btn--outline">Mở Công Cụ Thiệp</a></article>
         <article class="utility"><h3>Ghép Ảnh Cưới AI</h3><p>Tạo ảnh cưới từ hai ảnh chân dung khi dịch vụ AI đã được cấu hình.</p><a href="ghep-anh-cuoi.html" class="btn btn--outline">Mở Công Cụ Ảnh</a></article>
       </div></div>
