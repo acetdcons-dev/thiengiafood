@@ -847,6 +847,7 @@ input:focus-visible, select:focus-visible, textarea:focus-visible {
 
 .section-title { max-width: 850px; }
 .section-title--center { margin-left: auto; margin-right: auto; }
+.services .section-title { max-width: 1100px; font-size: clamp(1.9rem, 3vw, 2.8rem); white-space: nowrap; }
 .section-subtitle { line-height: 1.75; margin-bottom: 42px; }
 .services, .pricing, .gallery, .process, .furniture, .news, .faq, .about,
 .booking, .utilities { padding-top: 88px; padding-bottom: 88px; }
@@ -895,6 +896,7 @@ input:focus-visible, select:focus-visible, textarea:focus-visible {
   .services, .pricing, .gallery, .process, .furniture, .news, .faq, .about,
   .booking, .utilities { padding-top: 68px; padding-bottom: 68px; }
   .section-subtitle { margin-bottom: 34px; }
+  .services .section-title { white-space: normal; }
   .usp__grid, .services__grid, .gallery__grid { gap: 16px; }
 }
 
