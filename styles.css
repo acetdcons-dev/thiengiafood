@@ -13,22 +13,22 @@
   --gold-400: #e9c26e;
   --gold-500: #dab148;
   --gold-600: #bd8f2f;
-  --cream-100: #fdf6ea;
-  --cream-200: #f8ecd8;
-  --ink-900: #1c1a16;
-  --ink-700: #3a3530;
+  --cream-100: #fffaf2;
+  --cream-200: #f7ecdc;
+  --ink-900: #211a18;
+  --ink-700: #5d514b;
   --white: #ffffff;
 
   --font-display: "Playfair Display", "Be Vietnam Pro", serif;
   --font-body: "Be Vietnam Pro", system-ui, sans-serif;
 
-  --shadow-soft: 0 10px 30px rgba(26, 13, 12, 0.12);
-  --shadow-card: 0 18px 40px rgba(26, 13, 12, 0.16);
-  --shadow-gold: 0 8px 24px rgba(212, 175, 55, 0.35);
+  --shadow-soft: 0 10px 30px rgba(54, 25, 22, 0.08);
+  --shadow-card: 0 22px 54px rgba(54, 25, 22, 0.14);
+  --shadow-gold: 0 10px 26px rgba(189, 143, 47, 0.24);
 
-  --radius-lg: 8px;
-  --radius-md: 8px;
-  --radius-sm: 6px;
+  --radius-lg: 28px;
+  --radius-md: 18px;
+  --radius-sm: 12px;
 }
 
 * { margin: 0; padding: 0; box-sizing: border-box; }
@@ -53,7 +53,7 @@ ul { list-style: none; }
 
 .container {
   width: 100%;
-  max-width: 1180px;
+  max-width: 1240px;
   margin: 0 auto;
   padding: 0 24px;
 }
@@ -107,13 +107,13 @@ h1, h2, h3, h4 { font-family: var(--font-display); font-weight: 700; color: var(
   margin-bottom: 10px;
 }
 .section-label--center { text-align: center; }
-.section-title { font-size: clamp(1.6rem, 3vw, 2.4rem); margin-bottom: 14px; }
+.section-title { font-size: clamp(2rem, 3.4vw, 3.15rem); margin-bottom: 16px; letter-spacing: -.025em; }
 .section-title--center { text-align: center; }
 .section-title--left { text-align: left; }
 .section-subtitle {
   text-align: center;
-  max-width: 620px;
-  margin: 0 auto 48px;
+  max-width: 720px;
+  margin: 0 auto 52px;
   color: var(--ink-700);
   font-size: 1.02rem;
 }
@@ -187,8 +187,8 @@ h1, h2, h3, h4 { font-family: var(--font-display); font-weight: 700; color: var(
 }
 .logo__mark svg { width: 58%; height: 58%; }
 .logo em { color: var(--gold-400); font-style: normal; }
-.nav { display: flex; gap: 28px; }
-.nav a { color: var(--cream-200); font-weight: 600; font-size: 0.95rem; position: relative; padding: 4px 0; white-space: nowrap; }
+.nav { display: flex; align-items: center; gap: 18px; }
+.nav a { color: var(--cream-200); font-weight: 600; font-size: 0.86rem; position: relative; padding: 7px 0; white-space: nowrap; }
 .nav a::after {
   content: ""; position: absolute; left: 0; bottom: -2px; width: 0; height: 2px;
   background: var(--gold-500); transition: width 0.25s ease;
@@ -200,7 +200,7 @@ h1, h2, h3, h4 { font-family: var(--font-display); font-weight: 700; color: var(
 .nav__dropdown { position: relative; }
 .nav__dropdown-toggle {
   background: none; border: none; cursor: pointer;
-  color: var(--cream-200); font-weight: 600; font-size: 0.95rem;
+  color: var(--cream-200); font-weight: 600; font-size: 0.86rem;
   font-family: var(--font-body); padding: 4px 0;
   display: flex; align-items: center; gap: 4px; white-space: nowrap;
 }
@@ -665,6 +665,31 @@ h1, h2, h3, h4 { font-family: var(--font-display); font-weight: 700; color: var(
   border: 1px solid var(--gold-500);
 }
 .toast.is-visible { opacity: 1; transform: translateX(-50%) translateY(0); }
+
+/* ===== 2026 VISUAL REFINEMENT ===== */
+.hero { background: radial-gradient(circle at 78% 22%, #68202a 0%, var(--maroon-900) 42%, #21090c 100%); }
+.hero__text h1 { font-size: clamp(2.65rem, 5vw, 4.6rem); letter-spacing: -.035em; margin-bottom: 24px; }
+.hero__subtitle { max-width: 620px; line-height: 1.75; }
+.hero__image-frame { border: 1px solid rgba(233,194,110,.7); }
+.usp { padding: 80px 0 96px; }
+.usp__item { border-color: rgba(98,19,27,.1); }
+.services, .pricing, .gallery, .process, .furniture, .news, .faq, .about { padding-top: 104px; padding-bottom: 104px; }
+.service-card, .home-menu-card, .news-card, .process__step, .faq__item { border: 1px solid rgba(98,19,27,.08); }
+.service-card:hover, .news-card:hover { transform: translateY(-5px); }
+.service-card__img { aspect-ratio: 16 / 10; }
+.service-card h3 { padding: 20px 22px 7px; font-size: 1.2rem; }
+.service-card p { padding: 0 22px 24px; line-height: 1.65; }
+.home-menu-card { transition: transform .25s ease, box-shadow .25s ease; }
+.home-menu-card:hover { transform: translateY(-5px); box-shadow: var(--shadow-card); }
+.home-menu-card__body { padding: 21px; }
+.process__step { padding: 30px 24px; }
+.furniture__features li { background: rgba(255,255,255,.88); padding: 19px; }
+.furniture__gallery { gap: 18px; }
+.news-card__body { padding: 24px; }
+.faq__list { max-width: 860px; }
+.faq__question { padding: 23px 26px; }
+.booking__form { border: 1px solid rgba(233,194,110,.22); }
+.footer { background: #21090c; padding-top: 76px; }
 
 /* ===================================================================
    RESPONSIVE
