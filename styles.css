@@ -544,6 +544,34 @@ h1, h2, h3, h4 { font-family: var(--font-display); font-weight: 700; color: var(
 .home-menu-card .btn { margin-top: auto; }
 .section-action { display: flex; justify-content: center; margin-top: 32px; }
 
+/* ===== FURNITURE ===== */
+.furniture { padding: 90px 0; background: var(--cream-200); }
+.furniture__inner { display: grid; grid-template-columns: .9fr 1.1fr; gap: 54px; align-items: center; }
+.furniture__content > p { color: var(--ink-700); margin: 16px 0 24px; }
+.furniture__features { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 14px; margin-bottom: 28px; }
+.furniture__features li { padding: 16px; background: rgba(255,255,255,.72); border: 1px solid rgba(189,143,47,.25); border-radius: var(--radius-sm); }
+.furniture__features strong, .furniture__features span { display: block; }
+.furniture__features strong { color: var(--maroon-800); }
+.furniture__features span { color: var(--ink-700); font-size: .82rem; margin-top: 5px; }
+.furniture__gallery { display: grid; grid-template-columns: repeat(2, 1fr); grid-template-rows: repeat(2, 160px); gap: 14px; }
+.furniture__gallery figure { overflow: hidden; border-radius: var(--radius-md); box-shadow: var(--shadow-soft); }
+.furniture__gallery-main { grid-row: 1 / 3; }
+.furniture__gallery img { width: 100%; height: 100%; object-fit: cover; display: block; }
+
+/* ===== NEWS ===== */
+.news { padding: 90px 0; background: var(--cream-100); }
+.news__grid { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 24px; }
+.news-card { display: flex; flex-direction: column; overflow: hidden; background: var(--white); border: 1px solid rgba(189,143,47,.22); border-radius: var(--radius-md); box-shadow: var(--shadow-soft); transition: transform .25s ease, box-shadow .25s ease; }
+.news-card:hover { transform: translateY(-5px); box-shadow: var(--shadow-card); }
+.news-card__media { aspect-ratio: 16 / 10; overflow: hidden; }
+.news-card__media img { width: 100%; height: 100%; object-fit: cover; display: block; transition: transform .4s ease; }
+.news-card:hover .news-card__media img { transform: scale(1.05); }
+.news-card__body { display: flex; flex: 1; flex-direction: column; padding: 22px; }
+.news-card__body > span { color: var(--gold-600); font-size: .72rem; font-weight: 800; letter-spacing: .08em; text-transform: uppercase; }
+.news-card h3 { margin: 9px 0 10px; font-size: 1.15rem; }
+.news-card p { color: var(--ink-700); font-size: .88rem; margin-bottom: 18px; }
+.news-card a { margin-top: auto; color: var(--maroon-700); font-weight: 800; }
+
 /* ===== FAQ ===== */
 .faq { padding: 90px 0; background: var(--cream-200); }
 .faq__list { max-width: 760px; margin: 0 auto; display: flex; flex-direction: column; gap: 14px; }
@@ -649,13 +677,14 @@ h1, h2, h3, h4 { font-family: var(--font-display); font-weight: 700; color: var(
   .hero__stats { grid-template-columns: repeat(2, auto); justify-content: center; }
   .hero__image { order: 1; max-width: 420px; margin: 0 auto; }
   .usp__grid, .services__grid, .pricing__grid, .gallery__grid { grid-template-columns: repeat(2, 1fr); }
-  .about__inner, .booking__inner { grid-template-columns: 1fr; }
+  .about__inner, .booking__inner, .furniture__inner { grid-template-columns: 1fr; }
   .about__media { margin: 0 auto 40px; max-width: 620px; }
   .process__steps { grid-template-columns: repeat(3, 1fr); }
   .menu__dishes { grid-template-columns: repeat(2, 1fr); }
   .testimonials__track { grid-template-columns: repeat(2, 1fr); }
   .pricing__card--featured { transform: none; }
   .home-menu-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+  .news__grid { grid-template-columns: repeat(2, minmax(0, 1fr)); }
 }
 
 @media (max-width: 1100px) {
@@ -745,4 +774,6 @@ h1, h2, h3, h4 { font-family: var(--font-display); font-weight: 700; color: var(
   .booking__checklist { grid-template-columns: 1fr; gap: 8px; }
   .services, .pricing, .gallery, .process, .about, .faq, .booking, .utilities { padding-top: 60px; padding-bottom: 60px; }
   .home-menu-grid { grid-template-columns: 1fr; }
+  .furniture__features, .news__grid { grid-template-columns: 1fr; }
+  .furniture__gallery { grid-template-rows: 230px 130px; }
 }

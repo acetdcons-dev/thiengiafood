@@ -83,7 +83,7 @@ document.addEventListener('DOMContentLoaded', () => {
     });
   });
 
-  const revealTargets = document.querySelectorAll('.usp__item, .service-card, .process__step, .pricing__card, .gallery__grid figure, .about__content, .about__media, .faq__item, .utility');
+  const revealTargets = document.querySelectorAll('.usp__item, .service-card, .process__step, .pricing__card, .gallery__grid figure, .furniture__content, .furniture__gallery, .news-card, .about__content, .about__media, .faq__item, .utility');
   if ('IntersectionObserver' in window) {
     revealTargets.forEach(element => element.classList.add('reveal'));
     const observer = new IntersectionObserver(entries => {
