@@ -264,6 +264,8 @@ h1, h2, h3, h4 { font-family: var(--font-display); font-weight: 700; color: var(
 .hero__text h1 .highlight { color: var(--gold-400); }
 .hero__subtitle { color: rgba(251, 244, 230, 0.82); font-size: 1.08rem; max-width: 540px; margin-bottom: 32px; }
 .hero__cta { display: flex; gap: 16px; flex-wrap: wrap; margin-bottom: 44px; }
+.hero__cta .btn--outline { color: var(--cream-100); border-color: var(--gold-400); background: rgba(255,255,255,.04); }
+.hero__cta .btn--outline:hover { color: var(--maroon-950); background: var(--gold-400); }
 .hero__stats { display: grid; grid-template-columns: repeat(4, auto); gap: 26px; }
 .hero__stat { display: flex; flex-direction: column; }
 .hero__stat strong { font-family: var(--font-display); font-size: 1.8rem; color: var(--gold-400); }
